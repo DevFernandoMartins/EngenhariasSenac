@@ -17,7 +17,7 @@
 <script>
 export default {
     mounted() {
-        const targetDate = new Date('2024-12-01T19:10:00');
+        const targetDate = new Date('2024-10-26T19:10:00');
 
         function updateCountdown() {
             const now = new Date();
@@ -28,13 +28,14 @@ export default {
             if (daysLeft > 3) {
                 document.getElementById('countdown').innerHTML = `Faltam <span>${daysLeft}</span> dias`;
             } else {
-                const hoursLeft = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutesLeft = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const secondsLeft = Math.floor((difference % (1000 * 60)) / 1000);
+                const hoursLeft = String(Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                const minutesLeft = String(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                const secondsLeft = String(Math.floor((difference % (1000 * 60)) / 1000)).padStart(2, '0');
 
                 document.getElementById('countdown').innerHTML = `Faltam <span>${hoursLeft}</span>:<span>${minutesLeft}</span>:<span>${secondsLeft}</span>`;
             }
         }
+
 
         setInterval(updateCountdown, 1000);
 

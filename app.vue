@@ -44,17 +44,11 @@ export default {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 24px;
+  font-weight: 700;
   letter-spacing: .1rem;
   color: var(--black-color);
   margin-bottom: 30px
-}
-
-p {
-  font-weight: 400;
-  font-size: 1;
-  text-indent: 30px;
-  margin: 20px 0;
 }
 
 a.btn-primary {

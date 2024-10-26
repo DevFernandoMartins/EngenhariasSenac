@@ -25,6 +25,10 @@ export default {}
 </script>
 
 <style lang="css" scoped>
+p {
+    margin: 20px 0;
+    text-indent: 20px;
+}
 section#about-home {
     width: 100%;
     padding: 30px;
@@ -33,7 +37,7 @@ section#about-home {
 #inside-about-home {
     width: 100%;
     margin: auto;
-    max-width: 1600px;
+    max-width: 1440px;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

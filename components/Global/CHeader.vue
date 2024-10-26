@@ -133,7 +133,7 @@ nav#navbar-sm {
 
 nav#navbar-lg {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1440px;
     margin: auto;
 }
 

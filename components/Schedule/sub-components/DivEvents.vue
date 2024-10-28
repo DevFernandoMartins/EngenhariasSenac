@@ -1,7 +1,7 @@
 <template>
     <section id="schedule-home">
         <div id="inside-schedule-home">
-            <h2>Palestras da 10º Semana das Engenharias</h2>
+            <h2>{{ title }}</h2>
             <div id="events">
                 <div class="event" v-for="(event, index) in 4" :key="index">
                     <div class="event-img">
@@ -14,13 +14,19 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn-primary margin-auto">Ver programação completa</a>
         </div>
     </section>
 </template>
 
 <script>
-export default {}
+export default {
+    props: {
+        title: {
+            type: String,
+            Required: true
+        }
+    }
+}
 </script>
 
 <style lang="css" scoped>
@@ -50,37 +56,6 @@ section#schedule-home {
     gap: 50px 30px;
     align-items: center;
     padding: 5px;
-}
-
-#events > .event:first-child::after {
-    content: 'Finalizada';
-    position: absolute;
-    width: 100%;
-    height: 30px;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 0, 0, 0.578);
-    color: white; 
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em; 
-    font-weight: bold;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-
-#events > .event:first-child::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.43);
-    z-index: 10;
 }
 
 .event {

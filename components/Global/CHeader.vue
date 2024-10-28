@@ -10,7 +10,7 @@
                 <li id="div-logo-senac">
                     <a href="/">
                         <img src="/public/img/logo-engenharias_senac-azul.png"
-                            alt="Logo dos cursos do Centro Universitário Senac" id="logo-senac">
+                            alt="Logo dos cursos de Engenharia do Centro Universitário Senac" id="logo-senac">
                     </a>
                 </li>
                 <li id="div-navbar-lg">
@@ -25,10 +25,6 @@
             </ul>
         </nav>
 
-        <a href="#" id="link-logo-senac-sm">
-            <img src="/public/img/logo-engenharias_senac.png" alt="Logo dos cursos do Centro Universitário Senac"
-                id="logo-senac-sm">
-        </a>
         <nav id="navbar-sm" class="navbar-close" data-status="closed">
             <ul>
                 <li v-for="navbarLink in navbarList" :key="navbarLink.text">

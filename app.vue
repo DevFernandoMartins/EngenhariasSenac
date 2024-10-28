@@ -48,7 +48,7 @@ h2 {
   font-weight: 700;
   letter-spacing: .1rem;
   color: var(--black-color);
-  margin-bottom: 30px
+  margin-bottom: 15px;
 }
 
 a.btn-primary {

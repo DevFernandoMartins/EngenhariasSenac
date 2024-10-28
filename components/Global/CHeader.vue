@@ -14,10 +14,7 @@
                     </a>
                 </li>
                 <li id="div-navbar-lg">
-                    <a :href="navbarList[0].link" v-html="navbarList[0].text"></a>
-                    <a :href="navbarList[1].link" v-html="navbarList[1].text"></a>
-                    <a :href="navbarList[2].link" v-html="navbarList[2].text"></a>
-                    <a :href="navbarList[3].link" v-html="navbarList[3].text"></a>
+                    <RouterLink v-for="link in navbarList" :to="'/' + link.link">{{ link.text }}</RouterLink>
                 </li>
                 <li id="div-route-login">
                     <a href="#" id="route-login"><i class="fa-solid fa-lock"></i> <span>Entrar</span></a>

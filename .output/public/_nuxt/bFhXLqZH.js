@@ -1,1 +1,0 @@
-import{C as a,a as n}from"./C65ERMOQ.js";import{_ as s,v as c,z as e,J as p,g as o,t as _}from"./BSOFMOAS.js";const m={components:{CHeader:a,CFooter:n}};function d(i,l,C,f,u,F){const t=o("CHeader"),r=o("CFooter");return _(),c(p,null,[e(t,{title:"Quero ser parceiro"}),e(r)],64)}const H=s(m,[["render",d]]);export{H as default};

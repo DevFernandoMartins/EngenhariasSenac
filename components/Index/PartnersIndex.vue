@@ -1,21 +1,21 @@
 <template>
-<section id="partners-home">
-    <div id="inside-partners-home">
-        <h2>Empresas Parceiras</h2>
+    <section id="partners-home">
+        <div id="inside-partners-home">
+            <h2>Empresas Parceiras</h2>
 
-        <div id="partners">
-            <a href="#" class="partner" v-for="partner in 5">
-                <div class="partner-img">
-                    <img src="/public/img/logo-engenharias_senac-azul.png" alt="Logo do parceiro">
-                </div>
-                <div class="partner-data">
-                    <h3>Senac Santo Amaro</h3>
-                </div>
-            </a>
+            <div id="partners">
+                <a href="#" class="partner" v-for="partner in 6">
+                    <div class="partner-img">
+                        <img src="/public/img/logo-engenharias_senac-azul.png" alt="Logo do parceiro">
+                    </div>
+                    <div class="partner-data">
+                        <h3>Senac Santo Amaro</h3>
+                    </div>
+                </a>
+            </div>
+            <RouterLink to="patrocinar" class="btn-primary margin-auto">Quero ser parceiro</RouterLink>
         </div>
-        <a href="#" class="btn-primary margin-auto">Quero ser parceiro</a>
-    </div>
-</section>
+    </section>
 </template>
 
 <script>
@@ -25,7 +25,7 @@ export default {}
 <style lang="css" scoped>
 section#partners-home {
     width: 100%;
-    padding: 30px;
+    padding: 30px 15px;
     border-top: 30px;
 }
 
@@ -39,8 +39,8 @@ section#partners-home {
 #partners {
     width: calc(100% - 20px);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px 30px;
     margin: 40px 10px 50px;
 }
 
@@ -54,17 +54,29 @@ section#partners-home {
     width: 100%;
 }
 
-.partner-img > img {
+.partner-img>img {
     width: 100%;
 }
 
-.partner-data > h3 {
+.partner-data>h3 {
     text-align: center;
     color: var(--black-color);
     margin-top: 20px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: .1em;
     opacity: .7;
+}
+
+@media (max-width: 900px) {
+    #partners {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    #partners {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 </style>

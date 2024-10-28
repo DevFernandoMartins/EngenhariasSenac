@@ -13,7 +13,7 @@
                         </div>
                         <div class="event-data">
                             <div class="event-local">01/12/2024 19:10 / Sala E285</div>
-                            <h3>Título da palestra</h3>
+                            <h3>Título</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus
                                 adipisci.</p>
                         </div>
@@ -58,7 +58,7 @@ p {
 
 section#schedule-home {
     width: 100%;
-    padding: 30px;
+    padding: 30px 15px;
 }
 
 #inside-schedule-home {

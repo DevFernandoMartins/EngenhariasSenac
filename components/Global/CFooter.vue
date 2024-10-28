@@ -8,7 +8,7 @@
                 </a>
             </div>
 
-            <div id="copyrigth">
+            <div id="copyright">
                 © Centro Universitário Senac Santo Amaro. Todos os Direitos Reservados
             </div>
         </div>
@@ -19,7 +19,7 @@
 footer#footer {
     width: 100%;
     background-color: var(--first-color);
-    padding: 15px 40px;
+    padding: 30px 15px;
     z-index: 30;
     transition: background-color 0.2s ease;
 }
@@ -38,12 +38,30 @@ img#logo-senac {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
-#copyrigth {
+#copyright {
     color: var(--second-color);
     font-size: .9rem;
+    opacity: .8;
 }
 
 
+@media (max-width: 1000px) {
+    #inside-footer {
+        flex-direction: column;
+    }
+
+    #copyright {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    img#logo-senac {
+        height: 30px;
+    }
+
+}
 </style>

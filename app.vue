@@ -79,4 +79,24 @@ a.btn-primary:hover {
 .margin-auto {
   margin: auto;
 }
+
+
+@media (max-width: 500px) {
+
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 300px) {
+  body {
+    display: none;
+  }
+}
 </style>

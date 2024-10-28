@@ -14,7 +14,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores ut molestiae quo. Nam harum
                     mollitia labore? Culpa quo quaerat animi officiis provident laudantium? Molestias ipsam aut adipisci
                     eum deleniti saepe.</p>
-                <a href="#" class="btn-primary">Ver programação</a>
+                <RouterLink to="programacao" class="btn-primary">Ver programação</RouterLink>
             </div>
         </div>
     </section>
@@ -31,7 +31,7 @@ p {
 }
 section#about-home {
     width: 100%;
-    padding: 30px;
+    padding: 30px 15px;
 }
 
 #inside-about-home {
@@ -67,7 +67,6 @@ section#about-home {
         grid-template-columns: repeat(1, 1fr);
         gap: 30px;
         align-items: center;
-        margin-bottom: 50px;
     }
 }
 </style>

@@ -119,7 +119,7 @@ export default {
 header#header {
     width: 100%;
     background-color: transparent;
-    padding: 15px 40px;
+    padding: 15px;
     position: fixed;
     z-index: 30;
     transition: background-color 0.2s ease;
@@ -271,32 +271,27 @@ img#logo-senac {
         display: none;
     }
 
-    .navbar-open {
-        left: 0;
+}
+
+@media (max-width: 500px) {
+    #btn-toggle-nav {
+        gap: 3px;
     }
 
-    .navbar-close {
-        left: -100%;
+    #btn-toggle-nav>div {
+        width: 28px;
+        height: 3px;
     }
 
-    .btn-to-close div#div-logo-senac {
-        transform: rotate(0);
+    li#div-route-login>a {
+        padding: 10px 14px;
+        font-size: .8rem;
+        border: 1px solid #d4d4d4;
     }
 
-    .btn-to-close div#div-route-login {
-        transform: rotate(0);
+    img#logo-senac {
+        height: 30px;
     }
 
-    .btn-to-close.active div#div-logo-senac {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .btn-to-close.active div#div-navbar-lg {
-        opacity: 0;
-    }
-
-    .btn-to-close.active div#div-route-login {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
 }
 </style>

@@ -10,11 +10,12 @@
                     <div class="event-data">
                         <div class="event-local">01/12/2024 19:10 / Sala E285</div>
                         <h3>Título da palestra</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus
+                            adipisci.</p>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn-primary margin-auto">Ver programação completa</a>
+            <RouterLink to="programacao" class="btn-primary margin-auto">Ver programação completa</RouterLink>
         </div>
     </section>
 </template>
@@ -24,7 +25,6 @@ export default {}
 </script>
 
 <style lang="css" scoped>
-
 p {
     font-size: .9rem;
     opacity: .8;
@@ -32,7 +32,7 @@ p {
 
 section#schedule-home {
     width: 100%;
-    padding: 30px;
+    padding: 30px 15px;
 }
 
 #inside-schedule-home {
@@ -47,12 +47,12 @@ section#schedule-home {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     flex-wrap: wrap;
-    gap: 50px 30px;
+    gap: 30px;
     align-items: center;
     padding: 5px;
 }
 
-#events > .event:first-child::after {
+#events>.event:first-child::after {
     content: 'Finalizada';
     position: absolute;
     width: 100%;
@@ -60,19 +60,19 @@ section#schedule-home {
     top: 0;
     left: 0;
     background-color: rgba(255, 0, 0, 0.578);
-    color: white; 
+    color: white;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em; 
+    font-size: 1em;
     font-weight: bold;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
 
-#events > .event:first-child::before {
+#events>.event:first-child::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -108,7 +108,7 @@ section#schedule-home {
     transition: .3s;
 }
 
-.event:hover > .event-img {
+.event:hover>.event-img {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -129,7 +129,7 @@ section#schedule-home {
     margin-bottom: 10px
 }
 
-.btn-more > a {
+.btn-more>a {
     display: block;
     width: 100%;
     color: var(--second-color);
@@ -143,11 +143,23 @@ section#schedule-home {
     transition: .3s;
 }
 
-.event:hover > .btn-more > a {
+.event:hover>.btn-more>a {
     opacity: 1;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
+@media (max-width: 900px) {
+    #events {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+}
+
+@media (max-width: 600px) {
+    #events {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
 </style>

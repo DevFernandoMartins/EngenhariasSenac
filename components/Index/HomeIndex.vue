@@ -4,7 +4,7 @@
             <div id="countdown"></div>
             <p>Explore as inovações, participe das palestras e se conecte com empresas parceiras em uma semana dedicada
                 ao futuro da engenharia!</p>
-            <a href="#" class="btn-primary">Saiba mais</a>
+            <RouterLink to="/" class="btn-primary">Saiba mais</RouterLink>
         </div>
     </section>
 </template>
@@ -40,7 +40,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
 #inside-main-home>p {
     color: var(--black-color);
     text-align: center;
@@ -49,7 +48,7 @@ export default {
 
 section#main-home {
     width: 100%;
-    padding: 30px;
+    padding: 30px 15px;
     position: relative;
 }
 
@@ -65,12 +64,18 @@ div#inside-main-home {
 }
 
 #countdown {
-    font-size: 3rem;
+    font-size: 50px;
     text-align: center;
     margin: 30px auto 10px;
     max-width: 1280px;
     letter-spacing: .1rem;
     font-weight: 600;
     color: var(--black-color);
+}
+
+@media (max-width: 500px) {
+    #countdown {
+        font-size: 35px;
+    }
 }
 </style>

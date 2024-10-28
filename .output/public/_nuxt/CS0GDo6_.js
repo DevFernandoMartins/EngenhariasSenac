@@ -1,0 +1,1 @@
+import{C as r,a}from"./C65ERMOQ.js";import{_ as s,v as c,z as e,J as p,g as o,t as _}from"./BSOFMOAS.js";const m={components:{CHeader:r,CFooter:a}};function d(l,C,f,i,u,F){const t=o("CHeader"),n=o("CFooter");return _(),c(p,null,[e(t,{title:"Entre em contato"}),e(n)],64)}const H=s(m,[["render",d]]);export{H as default};

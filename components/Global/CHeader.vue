@@ -222,15 +222,6 @@ img#logo-senac {
     padding-top: 80px
 }
 
-#inside-picture>h1 {
-    text-align: center;
-    margin: 0 0 15px;
-    font-size: 3.5rem;
-    letter-spacing: .1rem;
-    color: #fff;
-    font-weight: 600;
-}
-
 @media (max-width: 999px) {
     #navbar-lg>ul {
         width: 100%;

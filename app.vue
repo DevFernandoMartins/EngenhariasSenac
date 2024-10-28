@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtPage/>
+    <NuxtPage />
   </div>
 </template>
 
@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="css">
-
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -43,6 +42,15 @@ export default {
   --black-color: #262626;
 }
 
+h1 {
+  text-align: center;
+  margin: 0 0 15px;
+  font-size: 40px;
+  letter-spacing: .1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
 h2 {
   font-size: 24px;
   font-weight: 700;
@@ -52,24 +60,23 @@ h2 {
 }
 
 a.btn-primary {
-    display: block;
-    width: max-content;
-    color: var(--first-color);
-    border: 1px solid var(--first-color);
-    padding: 10px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    margin-top: 30px;
-    transition: .2s;
+  display: block;
+  width: max-content;
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 30px;
+  transition: .2s;
 }
 
 a.btn-primary:hover {
-    background-color: var(--first-color);
-    color: #fff;
+  background-color: var(--first-color);
+  color: #fff;
 }
 
 .margin-auto {
   margin: auto;
 }
-
 </style>

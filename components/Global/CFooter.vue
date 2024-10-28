@@ -44,4 +44,6 @@ img#logo-senac {
     color: var(--second-color);
     font-size: .9rem;
 }
+
+
 </style>

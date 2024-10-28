@@ -3,7 +3,7 @@
         <div id="inside-schedule-home">
             <h2>Palestras da 10º Semana das Engenharias</h2>
             <div id="events">
-                <div class="event" v-for="(event, index) in 8" :key="index">
+                <div class="event" v-for="(event, index) in 4" :key="index">
                     <div class="event-img">
                         <img src="/public/img/picture_senac_engineer03.jpg" alt="Foto do palestrante">
                     </div>
@@ -12,11 +12,9 @@
                         <h3>Título da palestra</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci.</p>
                     </div>
-                    <div class="btn-more">
-                        <a href="#">Saiba mais</a>
-                    </div>
                 </div>
             </div>
+            <a href="#" class="btn-primary margin-auto">Ver programação completa</a>
         </div>
     </section>
 </template>
@@ -59,7 +57,7 @@ section#schedule-home {
     flex-wrap: wrap;
     gap: 50px 30px;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 #events > .event:first-child::after {

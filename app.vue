@@ -68,4 +68,8 @@ a.btn-primary:hover {
     color: #fff;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 </style>

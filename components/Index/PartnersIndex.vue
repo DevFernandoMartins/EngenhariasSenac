@@ -4,7 +4,7 @@
         <h2>Empresas Parceiras</h2>
 
         <div id="partners">
-            <a href="#" class="partner" v-for="partner in 3">
+            <a href="#" class="partner" v-for="partner in 5">
                 <div class="partner-img">
                     <img src="/public/img/logo-engenharias_senac-azul.png" alt="Logo do parceiro">
                 </div>
@@ -13,6 +13,7 @@
                 </div>
             </a>
         </div>
+        <a href="#" class="btn-primary margin-auto">Quero ser parceiro</a>
     </div>
 </section>
 </template>
@@ -31,16 +32,16 @@ section#partners-home {
 #inside-partners-home {
     width: 100%;
     margin: auto;
-    max-width: 1600px;
+    max-width: 1440px;
     overflow: hidden;
 }
 
 #partners {
-    width: 100%;
+    width: calc(100% - 20px);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 30px;
-    margin-top: 20px;
+    margin: 40px 10px 50px;
 }
 
 .partner {
@@ -61,5 +62,9 @@ section#partners-home {
     text-align: center;
     color: var(--black-color);
     margin-top: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: .1em;
+    opacity: .7;
 }
 </style>

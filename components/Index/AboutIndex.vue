@@ -1,12 +1,12 @@
 <template>
     <section id="about-home">
         <div id="inside-about-home">
-            <div class="img">
+            <div class="img" data-aos="fade-up">
                 <img src="/public/img/picture_senac_engineer07.jpg"
                     alt="Foto da Laboratório de Design Industrial do Centro Universitário Senac Santo Amaro">
             </div>
 
-            <div class="text-about">
+            <div class="text-about" data-aos="fade-up">
                 <h2>Sobre a Semana das Engenharias</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores ut molestiae quo. Nam harum
                     mollitia labore? Culpa quo quaerat animi officiis provident laudantium? Molestias ipsam aut adipisci

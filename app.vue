@@ -5,7 +5,16 @@
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default {
+  setup() {
+    // Inicialize o AOS no lado do cliente
+    onMounted(() => {
+      AOS.init();
+    });
+  },
   head() {
     return {
       script: [

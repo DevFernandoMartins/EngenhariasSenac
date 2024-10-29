@@ -1,8 +1,8 @@
 <template>
     <section id="schedule-home">
         <div id="inside-schedule-home">
-            <h2>{{ title }}</h2>
-            <div id="schedule-registers">
+            <h2 data-aos="fade-up">{{ title }}</h2>
+            <div id="schedule-registers" data-aos="fade-up">
                 <div id="go-to-left" @click="scrollLeft">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>

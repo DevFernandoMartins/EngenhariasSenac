@@ -9,7 +9,7 @@
             </div>
 
             <div id="copyright">
-                © Centro Universitário Senac Santo Amaro. Todos os Direitos Reservados
+                © Comitê das Engenharias Senac
             </div>
         </div>
     </footer>
@@ -19,9 +19,10 @@
 footer#footer {
     width: 100%;
     background-color: var(--first-color);
-    padding: 30px 15px;
+    padding: 15px;
     z-index: 30;
     transition: background-color 0.2s ease;
+    margin-top: 50px;
 }
 
 img#logo-senac {
@@ -43,7 +44,7 @@ img#logo-senac {
 
 #copyright {
     color: var(--second-color);
-    font-size: .9rem;
+    font-size: .7rem;
     opacity: .8;
 }
 

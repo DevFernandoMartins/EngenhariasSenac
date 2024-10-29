@@ -123,9 +123,13 @@ section#schedule-home {
     padding: 15px 10px;
 }
 
+.event-data>h3 {
+    margin-bottom: 5px;
+}
+
 .event-local {
-    opacity: .5;
-    font-size: .9rem;
+    opacity: .7;
+    font-size: .8rem;
     margin-bottom: 10px
 }
 

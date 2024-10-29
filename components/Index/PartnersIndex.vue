@@ -1,10 +1,10 @@
 <template>
     <section id="partners-home">
-        <div id="inside-partners-home">
-            <h2 data-aos="fade-up">Empresas Parceiras</h2>
+        <div id="inside-partners-home" data-aos="fade-up">
+            <h2>Empresas Parceiras</h2>
 
             <div id="partners">
-                <a href="#" class="partner" v-for="partner in 6" data-aos="fade-up">
+                <a href="#" class="partner" v-for="partner in 6">
                     <div class="partner-img">
                         <img src="/public/img/logo-engenharias_senac-azul.png" alt="Logo do parceiro">
                     </div>
@@ -13,7 +13,7 @@
                     </div>
                 </a>
             </div>
-            <RouterLink to="patrocinar" class="btn-primary margin-auto" data-aos="fade-up">Quero ser parceiro</RouterLink>
+            <RouterLink to="patrocinar" class="btn-primary margin-auto">Quero ser parceiro</RouterLink>
         </div>
     </section>
 </template>

@@ -131,6 +131,7 @@ section#schedule-home {
 }
 
 .event-data {
+    font-size: .8rem;
     padding: 15px 10px;
 }
 

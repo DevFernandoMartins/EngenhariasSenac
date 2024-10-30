@@ -1,6 +1,6 @@
 <template>
-    <section id="about-home">
-        <div id="inside-about-home">
+    <section id="about-sponsor">
+        <div id="inside-about-sponsor">
             <div class="img">
                 <img src="/public/img/picture_senac_engineer07.jpg"
                     alt="Foto da Laboratório de Design Industrial do Centro Universitário Senac Santo Amaro">
@@ -28,14 +28,13 @@ export default {}
 p {
     margin: 20px 0;
     text-indent: 20px;
-    opacity: .5;
 }
-section#about-home {
+section#about-sponsor {
     width: 100%;
-    padding: 60px 15px;
+    padding: 30px 15px;
 }
 
-#inside-about-home {
+#inside-about-sponsor {
     width: 100%;
     margin: auto;
     max-width: 1440px;
@@ -64,7 +63,7 @@ section#about-home {
 
 @media (max-width: 1000px) {
 
-    #inside-about-home {
+    #inside-about-sponsor {
         grid-template-columns: repeat(1, 1fr);
         gap: 30px;
         align-items: center;

@@ -6,7 +6,7 @@
 
 <script>
 import CHeader from '~/components/Global/CHeader.vue';
-import MainSchedule from '~/components/Schedule/MainSchedule.vue';
+import MainSchedule from '~/components/Programacao/MainSchedule.vue';
 import CFooter from '~/components/Global/CFooter.vue';
 
 export default {

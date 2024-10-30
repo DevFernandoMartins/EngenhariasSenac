@@ -2,25 +2,28 @@
     <section id="schedule-home">
         <div id="inside-schedule-home">
             <h2>{{ title }}</h2>
-            <div id="schedule-registers">
+
+            <div id="carrossel-control">
                 <div id="go-to-left" @click="scrollLeft">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
-                <div id="events" ref="eventsContainer">
-                    <div class="event" v-for="(event, index) in 12" :key="index">
-                        <div class="event-img">
-                            <img src="/public/img/picture_senac_engineer03.jpg" alt="Foto do palestrante">
-                        </div>
-                        <div class="event-data">
-                            <div class="event-local">01/12/2024 19:10 / Sala E285</div>
-                            <h3>Título</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus
-                                adipisci.</p>
-                        </div>
-                    </div>
-                </div>
                 <div id="go-to-right" @click="scrollRight">
                     <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div id="schedule-registers">
+                <div id="events" ref="eventsContainer">
+                    <div class="event" v-for="(event, index) in palestras" :key="index">
+                        <div class="event-img">
+                            <img :src="event.img" alt="Imagem da palestra">
+                        </div>
+                        <div class="event-data">
+                            <div class="event-local">{{ event.data + ' ' + event.horario + ' / ' + event.sala }}</div>
+                            <h3 class="event-title">{{ event.titulo }}</h3>
+                            <p class="event-desc">{{ event.descricao }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,7 +31,14 @@
 </template>
 
 <script>
+import Palestras from '~/json/Palestras.json';
+
 export default {
+    data() {
+        return {
+            palestras: Palestras
+        }
+    },
     props: {
         title: {
             type: String,
@@ -37,20 +47,39 @@ export default {
     },
     methods: {
         scrollLeft() {
+            const btnGoToLeft = document.getElementById('go-to-left')
+            btnGoToLeft.style.pointerEvents = "none";
+
             const container = this.$refs.eventsContainer;
             const itemWidth = container.querySelector('.event').clientWidth + 15;
-            container.scrollBy({ left: -itemWidth, behavior: 'smooth' }); 
+            container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+
+            setTimeout(() => {
+                btnGoToLeft.style.pointerEvents = "auto";
+            }, 500);
+
         },
         scrollRight() {
+            const btnGoToRigth = document.getElementById('go-to-right')
+            btnGoToRigth.style.pointerEvents = "none";
+
             const container = this.$refs.eventsContainer;
             const itemWidth = container.querySelector('.event').clientWidth + 15;
             container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+
+            setTimeout(() => {
+                btnGoToRigth.style.pointerEvents = "auto";
+            }, 500);
         }
     }
 }
 </script>
 
 <style lang="css" scoped>
+h2 {
+    padding-right: 50px;
+}
+
 p {
     font-size: .9rem;
     opacity: .8;
@@ -65,13 +94,39 @@ section#schedule-home {
     width: 100%;
     margin: auto;
     max-width: 1440px;
+    position: relative;
+}
+
+#carrossel-control {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#carrossel-control>div>i {
+    font-size: .8rem;
+    opacity: .5;
+    cursor: pointer;
+    transition: .3s;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    color: var(--second-color);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carrossel-control>div>i:hover {
+    opacity: 1;
 }
 
 #schedule-registers {
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 30px auto 30px;
-    align-items: center;
 }
 
 #events {
@@ -91,16 +146,9 @@ section#schedule-home {
     display: none;
 }
 
-#go-to-right {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
 .event {
     flex: 0 0 auto;
-    width: 100%;
-    max-width: 300px;
+    width: calc((100% - (15px * 3)) / 4);
     border-radius: 15px;
     background-color: var(--second-color);
     transition: .3s;
@@ -109,22 +157,21 @@ section#schedule-home {
 
 .event-img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: black;
     border-radius: 15px;
     transition: .3s;
 }
 
-.event:hover > .event-img {
+.event:hover>.event-img {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.event-img > img {
+.event-img>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -140,26 +187,30 @@ section#schedule-home {
     margin-bottom: 10px;
 }
 
-.fa-solid {
-    font-size: 1.6rem;
-    opacity: .5;
-    cursor: pointer;
-    transition: .3s;
+.event-title {
+    margin-bottom: 5px;
 }
 
-.fa-solid:hover {
-    opacity: 1;
+.event-desc {
+    opacity: .6;
+    font-size: .8rem
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .event {
-        max-width: 250px;
+        width: calc((100% - (15px * 2)) / 3);
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
     .event {
-        max-width: 100%;
+        width: calc((100% - (15px * 1)) / 2);
+    }
+}
+
+@media (max-width: 550px) {
+    .event {
+        width: 99%;
     }
 }
 </style>

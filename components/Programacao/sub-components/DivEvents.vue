@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import Palestras from '~/json/Palestras.json';
+import Palestras from '~/public/json/Palestras.json';
 
 export default {
     data() {

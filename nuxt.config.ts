@@ -1,17 +1,11 @@
-// nuxt.config.ts
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true },
   app: {
     head: {
       script: [
-        {
-          src: 'https://kit.fontawesome.com/a474f4b275.js',
-          crossorigin: 'anonymous'
-        },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js',
-          crossorigin: 'anonymous'
-        }
+        { src: 'https://kit.fontawesome.com/a474f4b275.js', crossorigin: 'anonymous' }
       ]
     }
   }

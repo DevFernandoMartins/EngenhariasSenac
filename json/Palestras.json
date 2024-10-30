@@ -1,74 +1,74 @@
 [
     {
         "img": "/img/no-image.jpg",
-        "data": "03/12/2024",
+        "data": "25/11/2024",
         "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "sala": "G306",
+        "titulo": "DV Software Instrumentação",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Eng. Euclides"
     },
     {
         "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
-        "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "data": "25/11/2024",
+        "horario": "20:20",
+        "sala": "G306",
+        "titulo": "Honda controle de Qualidade",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Eng. Valter"
     },
     {
         "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
-        "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "data": "25/11/2024",
+        "horario": "21:30",
+        "sala": "G306",
+        "titulo": "Criação de ferramental industrial",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Marcos Martins"
     },
     {
         "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
+        "data": "26/11/2024",
         "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "sala": "I335",
+        "titulo": "Equipamentos médicos hingend",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Eng. Flavio Proibas"
     },
     {
         "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
-        "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "data": "26/11/2024",
+        "horario": "20:20",
+        "sala": "I335",
+        "titulo": "PKM",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Eng. Eduardo"
     },
     {
         "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
-        "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "data": "26/11/2024",
+        "horario": "21:30",
+        "sala": "I335",
+        "titulo": "Concepção de protótipos de caminhões",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Eng. Heinrich"
     },
     {
         "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
+        "data": "27/11/2024",
         "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
-    },
-    {
-        "img": "/img/no-image.JPG",
-        "data": "01/12/2024",
-        "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "sala": "C254",
+        "titulo": "Testa Brasil - Veículos Elétricos",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Roberto Saldo"
     },
     {
         "img": "/img/no-image.jpg",
-        "data": "01/12/2024",
-        "horario": "19:10",
-        "sala": "E285",
-        "titulo": "Título da palestra",
-        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci"
+        "data": "27/11/2024",
+        "horario": "20:20",
+        "sala": "C254",
+        "titulo": "Eforce - Veículos Elétricos",
+        "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
+        "nome_palestrante": "Fagner"
     }
 ]

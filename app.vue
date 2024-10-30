@@ -86,6 +86,14 @@ a.btn-primary:hover {
   margin: auto;
 }
 
+.text-center {
+  text-align: center;
+}
+
+section {
+  min-height: calc(100vh - 422px);
+}
+
 
 @media (max-width: 500px) {
 

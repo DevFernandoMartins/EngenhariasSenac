@@ -22,7 +22,6 @@ footer#footer {
     padding: 15px;
     z-index: 30;
     transition: background-color 0.2s ease;
-    margin-top: 50px;
 }
 
 img#logo-senac {

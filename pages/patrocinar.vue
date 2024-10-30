@@ -6,7 +6,7 @@
 
 <script>
 import CHeader from '~/components/Global/CHeader.vue';
-import MainSponsor from '~/components/Sponsor/MainSponsor.vue';
+import MainSponsor from '~/components/Patrocinar/MainSponsor.vue';
 import CFooter from '~/components/Global/CFooter.vue';
 
 export default {

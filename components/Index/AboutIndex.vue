@@ -14,7 +14,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores ut molestiae quo. Nam harum
                     mollitia labore? Culpa quo quaerat animi officiis provident laudantium? Molestias ipsam aut adipisci
                     eum deleniti saepe.</p>
-                <RouterLink to="programacao" class="btn-primary">Ver programação</RouterLink>
+                <RouterLink to="programacao" class="btn btn-primary">Ver programação</RouterLink>
             </div>
         </div>
     </section>

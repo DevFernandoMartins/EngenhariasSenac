@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <RouterLink to="programacao" class="btn-primary margin-auto">Ver programação completa</RouterLink>
+            <RouterLink to="programacao" class="btn btn-primary margin-auto">Ver programação completa</RouterLink>
         </div>
     </section>
 </template>

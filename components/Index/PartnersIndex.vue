@@ -13,7 +13,7 @@
                     </div>
                 </a>
             </div>
-            <RouterLink to="patrocinar" class="btn-primary margin-auto">Quero ser parceiro</RouterLink>
+            <RouterLink to="patrocinar" class="btn btn-primary margin-auto">Quero ser parceiro</RouterLink>
         </div>
     </section>
 </template>

@@ -4,7 +4,7 @@
             <div id="countdown" data-aos="fade-up"></div>
             <p data-aos="fade-up">Explore as inovações, participe das palestras e se conecte com empresas parceiras em uma semana dedicada
                 ao futuro da engenharia!</p>
-            <RouterLink to="/" class="btn-primary" data-aos="fade-up">Saiba mais</RouterLink>
+            <RouterLink to="/" class="btn btn-primary" data-aos="fade-up">Saiba mais</RouterLink>
         </div>
     </section>
 </template>

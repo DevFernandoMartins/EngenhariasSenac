@@ -65,11 +65,9 @@ h2 {
   margin-bottom: 15px;
 }
 
-a.btn-primary {
+a.btn {
   display: block;
   width: max-content;
-  color: var(--first-color);
-  border: 1px solid var(--first-color);
   padding: 10px 30px;
   text-decoration: none;
   border-radius: 30px;
@@ -77,9 +75,19 @@ a.btn-primary {
   transition: .2s;
 }
 
+a.btn-primary {
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
+}
+
 a.btn-primary:hover {
   background-color: var(--first-color);
   color: #fff;
+}
+
+a.btn-secondary {
+  color: var(--second-color);
+  border: 1px solid var(--second-color);
 }
 
 .margin-auto {

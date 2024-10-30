@@ -17,7 +17,7 @@
                     <RouterLink v-for="link in navbarList" :to="'/' + link.link">{{ link.text }}</RouterLink>
                 </li>
                 <li id="div-route-login">
-                    <a href="#" id="route-login"><i class="fa-solid fa-lock"></i> <span>Entrar</span></a>
+                    <RouterLink to="/login" id="route-login"><i class="fa-solid fa-lock"></i> <span>Entrar</span></RouterLink>
                 </li>
             </ul>
         </nav>

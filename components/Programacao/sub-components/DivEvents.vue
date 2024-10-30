@@ -2,26 +2,29 @@
     <section id="schedule-home">
         <div id="inside-schedule-home">
             <h2>{{ title }}</h2>
-
             <div id="carrossel-control">
-                <div id="go-to-left" @click="scrollLeft">
-                    <i class="fa-solid fa-chevron-left"></i>
+                <h2 data-aos="fade-up">{{ title }}</h2>
+                <div id="schedule-registers" data-aos="fade-up">
+                    <div id="go-to-left" @click="scrollLeft">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div id="go-to-right" @click="scrollRight">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
                 </div>
-                <div id="go-to-right" @click="scrollRight">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </div>
 
-            <div id="schedule-registers">
-                <div id="events" ref="eventsContainer">
-                    <div class="event" v-for="(event, index) in palestras" :key="index">
-                        <div class="event-img">
-                            <img :src="event.img" alt="Imagem da palestra">
-                        </div>
-                        <div class="event-data">
-                            <div class="event-local">{{ event.data + ' ' + event.horario + ' / ' + event.sala }}</div>
-                            <h3 class="event-title">{{ event.titulo }}</h3>
-                            <p class="event-desc">{{ event.descricao }}</p>
+                <div id="schedule-registers">
+                    <div id="events" ref="eventsContainer">
+                        <div class="event" v-for="(event, index) in palestras" :key="index">
+                            <div class="event-img">
+                                <img :src="event.img" alt="Imagem da palestra">
+                            </div>
+                            <div class="event-data">
+                                <div class="event-local">{{ event.data + ' ' + event.horario + ' / ' + event.sala }}
+                                </div>
+                                <h3 class="event-title">{{ event.titulo }}</h3>
+                                <p class="event-desc">{{ event.descricao }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,6 +181,7 @@ section#schedule-home {
 }
 
 .event-data {
+    font-size: .8rem;
     padding: 15px 10px;
 }
 
@@ -193,7 +197,7 @@ section#schedule-home {
 
 .event-desc {
     opacity: .6;
-    font-size: .8rem
+    font-size: .8rem;
 }
 
 @media (max-width: 1000px) {

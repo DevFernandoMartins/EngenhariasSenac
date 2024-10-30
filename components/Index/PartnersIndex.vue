@@ -1,6 +1,6 @@
 <template>
     <section id="partners-home">
-        <div id="inside-partners-home">
+        <div id="inside-partners-home" data-aos="fade-up">
             <h2>Empresas Parceiras</h2>
 
             <div id="partners">

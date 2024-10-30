@@ -1,10 +1,10 @@
 <template>
     <section id="main-home">
         <div id="inside-main-home">
-            <div id="countdown"></div>
-            <p>Explore as inovações, participe das palestras e se conecte com empresas parceiras em uma semana dedicada
+            <div id="countdown" data-aos="fade-up"></div>
+            <p data-aos="fade-up">Explore as inovações, participe das palestras e se conecte com empresas parceiras em uma semana dedicada
                 ao futuro da engenharia!</p>
-            <RouterLink to="/" class="btn-primary">Saiba mais</RouterLink>
+            <RouterLink to="/" class="btn-primary" data-aos="fade-up">Saiba mais</RouterLink>
         </div>
     </section>
 </template>

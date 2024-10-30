@@ -33,7 +33,7 @@
     </header>
     <section id="picture">
         <div id="inside-picture">
-            <h1>{{ title }}</h1>
+            <h1 data-aos="fade-up">{{ title }}</h1>
         </div>
     </section>
 </template>
@@ -49,7 +49,7 @@ export default {
     data() {
         return {
             navbarList: [
-                { link: "/", text: "Saiba Mais" },
+                { link: "", text: "Saiba Mais" },
                 { link: "programacao", text: "Programação" },
                 { link: "patrocinar", text: "Patrocinar" },
                 { link: "contato", text: "Fale Conosco" }

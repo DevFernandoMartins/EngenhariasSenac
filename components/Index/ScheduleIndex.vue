@@ -1,9 +1,9 @@
 <template>
     <section id="schedule-home">
         <div id="inside-schedule-home">
-            <h2>Palestras da 10º Semana das Engenharias</h2>
+            <h2 data-aos="fade-up">Palestras da 10º Semana das Engenharias</h2>
             <div id="events">
-                <div class="event" v-for="(event, index) in 4" :key="index">
+                <div class="event" v-for="(event, index) in 4" :key="index" data-aos="fade-up">
                     <div class="event-img">
                         <img src="/public/img/picture_senac_engineer03.jpg" alt="Foto do palestrante">
                     </div>
@@ -123,9 +123,13 @@ section#schedule-home {
     padding: 15px 10px;
 }
 
+.event-data>h3 {
+    margin-bottom: 5px;
+}
+
 .event-local {
-    opacity: .5;
-    font-size: .9rem;
+    opacity: .7;
+    font-size: .8rem;
     margin-bottom: 10px
 }
 

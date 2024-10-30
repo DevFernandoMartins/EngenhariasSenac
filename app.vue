@@ -82,12 +82,17 @@ a.btn-primary {
 
 a.btn-primary:hover {
   background-color: var(--first-color);
-  color: #fff;
+  color: var(--second-color);
 }
 
 a.btn-secondary {
   color: var(--second-color);
   border: 1px solid var(--second-color);
+}
+
+a.btn-secondary:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
 }
 
 .margin-auto {
@@ -96,10 +101,6 @@ a.btn-secondary {
 
 .text-center {
   text-align: center;
-}
-
-section {
-  min-height: calc(100vh - 422px);
 }
 
 

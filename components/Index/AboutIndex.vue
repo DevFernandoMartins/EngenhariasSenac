@@ -32,7 +32,7 @@ p {
 }
 section#about-home {
     width: 100%;
-    padding: 60px 15px;
+    padding: 30px 15px;
 }
 
 #inside-about-home {

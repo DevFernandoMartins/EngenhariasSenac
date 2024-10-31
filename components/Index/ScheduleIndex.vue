@@ -81,7 +81,7 @@ section#schedule-home {
 }
 
 
-#events>.event:first-child::before {
+#events>.event.finished::before {
     content: '';
     position: absolute;
     width: 100%;

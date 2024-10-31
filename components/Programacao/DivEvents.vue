@@ -23,7 +23,7 @@
                 <div id="events" ref="eventsContainer">
                     <div class="event" v-for="(event, index) in palestras" :key="index">
                         <div class="event-img">
-                            <img :src="event.img" alt="Imagem da palestra">
+                            <nuxt-img :src="event.img" alt="Imagem da palestra" />
                         </div>
                         <div class="event-data">
                             <div class="event-local">{{ event.data + ' ' + event.horario + ' / ' + event.sala }}</div>

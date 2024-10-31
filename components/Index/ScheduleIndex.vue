@@ -3,25 +3,34 @@
         <div id="inside-schedule-home">
             <h2 data-aos="fade-up">Palestras da 10º Semana das Engenharias</h2>
             <div id="events">
-                <div class="event" v-for="(event, index) in 4" :key="index" data-aos="fade-up">
+                <div class="event" v-for="(event, index) in limitedPalestras" :key="index">
                     <div class="event-img">
-                        <img src="/public/img/picture_senac_engineer03.jpg" alt="Foto do palestrante">
+                        <nuxt-img :src="event.img" alt="Imagem da palestra" />
                     </div>
                     <div class="event-data">
-                        <div class="event-local">01/12/2024 19:10 / Sala E285</div>
-                        <h3>Título da palestra</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus
-                            adipisci.</p>
+                        <div class="event-local">{{ event.data + ' ' + event.horario + ' / ' + event.sala }}</div>
+                        <h3 class="event-title">{{ event.titulo }}</h3>
+                        <h4 class="speaker-name">{{ event.nome_palestrante }}</h4>
+                        <p class="event-desc">{{ event.descricao }}</p>
                     </div>
                 </div>
             </div>
-            <RouterLink to="programacao" class="btn btn-primary margin-auto">Ver programação completa</RouterLink>
+            <NuxtLink to="/programacao" class="btn btn-primary margin-auto">
+                Ver programação completa
+            </NuxtLink>
         </div>
     </section>
 </template>
 
-<script>
-export default {}
+<script setup>
+import { ref, computed } from 'vue'
+import Palestras from '~/public/json/Palestras.json'
+
+const palestras = ref(Palestras)
+
+const limitedPalestras = computed(() => {
+    return palestras.value.slice(0, 4)
+})
 </script>
 
 <style lang="css" scoped>
@@ -52,7 +61,7 @@ section#schedule-home {
     padding: 5px;
 }
 
-#events>.event:first-child::after {
+#events>.event.finished::after {
     content: 'Finalizada';
     position: absolute;
     width: 100%;

@@ -4,12 +4,12 @@
             <h2>Empresas Parceiras</h2>
 
             <div id="partners">
-                <a href="#" class="partner" v-for="partner in 6">
+                <a v-for="partner in parceiros" :href="partner.link" target="_blank" class="partner" >
                     <div class="partner-img">
-                        <img src="/public/img/logo-engenharias_senac-azul.png" alt="Logo do parceiro">
+                        <nuxt-img :src="partner.img" alt="Logo do parceiro" />
                     </div>
                     <div class="partner-data">
-                        <h3>Senac Santo Amaro</h3>
+                        <h3>{{ partner.nome }}</h3>
                     </div>
                 </a>
             </div>
@@ -19,7 +19,14 @@
 </template>
 
 <script>
-export default {}
+import Parceiros from '~/public/json/Parceiros.json';
+export default {
+    data() {
+        return {
+            parceiros: Parceiros
+        }
+    }
+}
 </script>
 
 <style lang="css" scoped>

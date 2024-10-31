@@ -58,12 +58,12 @@
         "data": "27/11/2024",
         "horario": "19:10",
         "sala": "C254",
-        "titulo": "Testa Brasil - Veículos Elétricos",
+        "titulo": "Tesla Brasil - Veículos Elétricos",
         "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt voluptatibus adipisci",
         "nome_palestrante": "Roberto Saldo"
     },
     {
-        "img": "/img/no-image.jpg",
+        "img": "/public/img/no-image.jpg",
         "data": "27/11/2024",
         "horario": "20:20",
         "sala": "C254",

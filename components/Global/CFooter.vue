@@ -3,8 +3,7 @@
         <div id="inside-footer">
             <div id="div-logo-senac">
                 <a href="/">
-                    <img src="/public/img/logo-engenharias_senac-azul.png"
-                        alt="Logo dos cursos de Engenharia do Centro Universitário Senac" id="logo-senac">
+                    <nuxt-img src="/img/logo-engenharias_senac-azul.png" alt="Logo dos cursos de Engenharia do Centro Universitário Senac" id="logo-senac" />
                 </a>
             </div>
 

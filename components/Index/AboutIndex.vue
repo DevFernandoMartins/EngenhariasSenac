@@ -2,8 +2,7 @@
     <section id="about-home">
         <div id="inside-about-home">
             <div class="img" data-aos="fade-up">
-                <img src="/public/img/picture_senac_engineer07.jpg"
-                    alt="Foto da Laboratório de Design Industrial do Centro Universitário Senac Santo Amaro">
+                <nuxt-img src="/img/picture_senac_engineer07.jpg" alt="Foto do Laboratório de Design Industrial do Centro Universitário Senac Santo Amaro" />
             </div>
 
             <div class="text-about" data-aos="fade-up">

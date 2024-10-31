@@ -1,8 +1,8 @@
 <template>
     <header id="header">
-        <nav id="navbar-lg">
+        <div id="inside-header">
             <ul>
-                <li id="btn-toggle-nav" class="btn-to-close" v-on:click="toggleNavbar">
+                <li id="btn-toggle-nav" class="btn-to-close" @click="toggleNavbar">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -13,14 +13,15 @@
                             alt="Logo dos cursos de Engenharia do Centro Universitário Senac" id="logo-senac">
                     </a>
                 </li>
-                <li id="div-navbar-lg">
+                <li id="navbar-lg">
                     <RouterLink v-for="link in navbarList" :to="'/' + link.link">{{ link.text }}</RouterLink>
                 </li>
                 <li id="div-route-login">
-                    <RouterLink to="/login" id="route-login"><i class="fa-solid fa-lock"></i> <span>Entrar</span></RouterLink>
+                    <RouterLink to="/login" id="route-login"><i class="fa-solid fa-lock"></i> <span>Entrar</span>
+                    </RouterLink>
                 </li>
             </ul>
-        </nav>
+        </div>
 
         <nav id="navbar-sm" class="navbar-close" data-status="closed">
             <ul>
@@ -64,8 +65,8 @@ export default {
     },
     methods: {
         toggleNavbar() {
-            const navbarSm = document.getElementById('navbar-sm');
-            const btnToggleNav = document.getElementById('btn-toggle-nav');
+            const navbarSm = document.getElementById('navbar-sm')
+            const btnToggleNav = document.getElementById('btn-toggle-nav')
             if (btnToggleNav) {
                 btnToggleNav.classList.toggle('active');
             }
@@ -74,42 +75,58 @@ export default {
                 navbarSm.classList.toggle('navbar-close');
                 if (navbarSm.getAttribute('data-status') == "closed") {
                     navbarSm.setAttribute('data-status', 'opened');
+                    this.headerToColor()
                     setTimeout(() => {
                         navbarSm.style.minHeight = "max-content";
                     }, 300);
                 } else {
                     navbarSm.setAttribute('data-status', 'closed');
                     navbarSm.style.minHeight = "";
+                    this.handleScroll()
                 }
+                
             }
         },
         handleScroll() {
-            const header = document.getElementById('header');
-            const logo = document.getElementById('logo-senac');
-            const links = header.querySelectorAll('nav#navbar-lg ul li a');
-            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div')
 
             if (window.scrollY > 50) {
-                header.style.backgroundColor = '#fff';
-                header.style.borderBottom = '1px solid #999999';
-                logo.style.filter = 'none';
-                btnOpenNav.forEach(div => {
-                    div.style.backgroundColor = "var(--first-color)"
-                })
-                links.forEach(link => {
-                    link.style.color = 'var(--black-color)';
-                });
+                this.headerToColor()
             } else {
-                header.style.backgroundColor = 'transparent';
-                header.style.borderBottom = 'none';
-                logo.style.filter = 'brightness(0) invert(1)';
-                btnOpenNav.forEach(div => {
-                    div.style.backgroundColor = "var(--second-color)"
-                })
-                links.forEach(link => {
-                    link.style.color = '#fff';
-                });
+                this.headerToWhite()
             }
+        },
+        headerToColor() {
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo-senac');
+            const links = header.querySelectorAll('div#inside-header ul li a');
+            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div')
+
+            header.style.backgroundColor = '#fff';
+            header.style.borderBottom = '1px solid #999999';
+            logo.style.filter = 'none';
+            btnOpenNav.forEach(div => {
+                div.style.backgroundColor = "var(--first-color)"
+            })
+            links.forEach(link => {
+                link.style.color = 'var(--black-color)';
+            });
+
+        },
+        headerToWhite() {
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo-senac');
+            const links = header.querySelectorAll('div#inside-header ul li a');
+            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div')
+
+            header.style.backgroundColor = 'transparent';
+            header.style.borderBottom = 'none';
+            logo.style.filter = 'brightness(0) invert(1)';
+            btnOpenNav.forEach(div => {
+                div.style.backgroundColor = "var(--second-color)"
+            })
+            links.forEach(link => {
+                link.style.color = '#fff';
+            });
         }
     }
 };
@@ -135,32 +152,33 @@ nav#navbar-sm {
     display: none;
 }
 
-nav#navbar-lg {
+nav#inside-header {
     width: 100%;
     max-width: 1440px;
     margin: auto;
 }
 
-#navbar-lg>ul {
+#inside-header>ul {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#navbar-lg>ul>li,
+#inside-header>ul>li,
 #navbar-sm>ul>li {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-li#div-navbar-lg {
+li#navbar-lg {
     display: flex;
     gap: 5px;
 }
 
-li#div-navbar-lg>a,
+li#navbar-lg>a,
+#navbar-sm>ul>li>a,
 li#div-route-login>a {
     display: block;
     width: max-content;
@@ -177,7 +195,7 @@ li#div-route-login>a {
     border: 2px solid #d4d4d4;
 }
 
-li#div-navbar-lg>a:hover,
+li#navbar-lg>a:hover,
 li#div-route-login>a:hover {
     background-color: rgba(197, 197, 197, 0.553);
 }
@@ -223,7 +241,23 @@ img#logo-senac {
 }
 
 @media (max-width: 999px) {
-    #navbar-lg>ul {
+    #btn-toggle-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    #btn-toggle-nav>div {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 3px;
+        transition: .3s
+    }
+
+    #inside-header>ul {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 2fr);
@@ -231,16 +265,67 @@ img#logo-senac {
         justify-content: space-between;
     }
 
-    #navbar-lg>ul>li#div-navbar-lg {
+    #inside-header>ul>li#navbar-lg {
         display: none;
         visibility: hidden;
+    }
+
+    nav#navbar-sm {
+        display: block;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        height: calc(100vh - 80px);
+        overflow: hidden;
+        background-color: var(--first-color);
+        transition: .3s;
+    }
+
+    nav#navbar-sm>ul {
+        height: 100%;
+        padding: 100px 0;
+        min-height: 500px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .navbar-open {
+        left: 0;
+    }
+
+    .navbar-close {
+        left: -100%;
+    }
+
+    .btn-to-close div:nth-child(1) {
+        transform: rotate(0);
+    }
+
+    .btn-to-close div:nth-child(3) {
+        transform: rotate(0);
+    }
+
+    .btn-to-close.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .btn-to-close.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .btn-to-close.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
     }
 
     #btn-toggle-nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 7px;
+        gap: 5px;
         width: max-content;
     }
 
@@ -274,8 +359,10 @@ img#logo-senac {
 }
 
 @media (max-width: 500px) {
-    #btn-toggle-nav {
-        gap: 3px;
+
+    nav#navbar-sm {
+        top: 70px;
+        height: calc(100vh - 70px);
     }
 
     #btn-toggle-nav>div {

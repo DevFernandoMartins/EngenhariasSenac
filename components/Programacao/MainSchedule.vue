@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import DivSchedule from './sub-components/DivEvents.vue';
+import DivSchedule from './DivEvents.vue';
 
 export default {
     components: { DivSchedule }

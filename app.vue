@@ -105,8 +105,6 @@ a.btn-secondary:hover {
 
 
 @media (max-width: 500px) {
-
-
   h1 {
     font-size: 30px;
   }

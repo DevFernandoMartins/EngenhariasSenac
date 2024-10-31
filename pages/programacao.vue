@@ -12,10 +12,4 @@ import CFooter from '~/components/Global/CFooter.vue';
 export default {
     components: { CHeader, MainSchedule, CFooter }
 }
-
-
 </script>
-
-<style lang="css" scoped>
-
-</style>

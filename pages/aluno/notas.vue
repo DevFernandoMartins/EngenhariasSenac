@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import CHeader from '~/components/System/Global/CHeader.vue';
+import CHeader from '~/components/Aluno/Global/CHeader.vue';
 
 export default {
     components: { CHeader }

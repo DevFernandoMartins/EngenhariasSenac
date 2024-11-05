@@ -140,37 +140,29 @@ section#schedule-home {
 }
 
 .event-data {
+    font-size: .8rem;
     padding: 15px 10px;
 }
 
-.event-data>h3 {
+.event-local {
+    opacity: .5;
+    font-size: .9rem;
+    margin-bottom: 10px;
+}
+
+.event-title {
     margin-bottom: 5px;
 }
 
-.event-local {
+.event-desc {
+    opacity: .6;
+    font-size: .8rem;
+}
+
+.speaker-name {
     opacity: .7;
-    font-size: .8rem;
-    margin-bottom: 10px
-}
-
-.btn-more>a {
-    display: block;
-    width: 100%;
-    color: var(--second-color);
-    background-color: var(--first-color);
-    text-align: center;
-    padding: 8px;
-    border-radius: 15px;
-    text-decoration: none;
-    opacity: .8;
-    font-size: .8rem;
-    transition: .3s;
-}
-
-.event:hover>.btn-more>a {
-    opacity: 1;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 900px) {

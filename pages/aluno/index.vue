@@ -4,8 +4,8 @@
 </template>
 
 <script lang="ts">
-import CHeader from '~/components/Aluno/Global/CHeader.vue';
-import MainProfile from '~/components/Aluno/Perfil/MainProfile.vue';
+import CHeader from '~/components/System/Aluno/AlunoHeader.vue';
+import MainProfile from '~/components/System/Aluno/MainPerfil.vue';
 
 export default {
     components: { CHeader, MainProfile }

@@ -7,7 +7,7 @@
 <DivSchedule title="Projetos 10º Semestre"/> -->
 </template>
 
-<script>
+<script lang="ts">
 import DivSchedule from './DivEvents.vue';
 
 export default {

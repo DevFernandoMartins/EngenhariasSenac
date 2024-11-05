@@ -9,35 +9,41 @@
     </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, onMounted, onBeforeUnmount } from "vue";
+
+export default defineComponent({
     mounted() {
         const targetDate = new Date('2024-11-25T19:10:00');
 
         function updateCountdown() {
-            const now = new Date();
-            const difference = targetDate - now;
+            const countdownElement = document.getElementById('countdown');
+            if (!countdownElement) return;
 
+            const now = new Date();
+            const difference = targetDate.getTime() - now.getTime();
             const daysLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
 
             if (daysLeft > 3) {
-                document.getElementById('countdown').innerHTML = `Faltam <span>${daysLeft}</span> dias`;
+                countdownElement.innerHTML = `Faltam <span>${daysLeft}</span> dias`;
             } else {
                 const hoursLeft = String(Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
                 const minutesLeft = String(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
                 const secondsLeft = String(Math.floor((difference % (1000 * 60)) / 1000)).padStart(2, '0');
 
-                document.getElementById('countdown').innerHTML = `Faltam <span>${hoursLeft}</span>:<span>${minutesLeft}</span>:<span>${secondsLeft}</span>`;
+                countdownElement.innerHTML = `Faltam <span>${hoursLeft}</span>:<span>${minutesLeft}</span>:<span>${secondsLeft}</span>`;
             }
         }
 
+        const countdownInterval = setInterval(updateCountdown, 1000);
 
-        setInterval(updateCountdown, 1000);
-
-
+        onBeforeUnmount(() => {
+            clearInterval(countdownInterval);
+        });
     },
-}
+});
 </script>
+
 
 <style lang="css" scoped>
 #inside-main-home>p {

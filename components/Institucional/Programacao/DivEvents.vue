@@ -3,18 +3,10 @@
         <div id="inside-schedule-home" data-aos="fade-up">
             <h2>{{ title }}</h2>
             <div id="carrossel-control">
-                <div
-                    id="go-to-left"
-                    @click="scrollLeft"
-                    :class="{ disabled: isAtStart }"
-                >
+                <div id="go-to-left" @click="scrollLeft" :class="{ disabled: isAtStart }">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
-                <div
-                    id="go-to-right"
-                    @click="scrollRight"
-                    :class="{ disabled: isAtEnd }"
-                >
+                <div id="go-to-right" @click="scrollRight" :class="{ disabled: isAtEnd }">
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
@@ -23,7 +15,7 @@
                 <div id="events" ref="eventsContainer">
                     <div class="event" v-for="(event, index) in palestras" :key="index">
                         <div class="event-img">
-                            <nuxt-img src="/img/no-image.jpg" alt="Imagem da palestra" />
+                            <nuxt-img :src="event.img" alt="Imagem da palestra" />
                         </div>
                         <div class="event-data">
                             <div class="event-local">{{ event.data + ' ' + event.horario + ' / ' + event.sala }}</div>
@@ -38,10 +30,11 @@
     </section>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, onMounted, ref } from "vue";
 import Palestras from '~/public/json/Palestras.json';
 
-export default {
+export default defineComponent({
     data() {
         return {
             palestras: Palestras,
@@ -57,10 +50,10 @@ export default {
     },
     methods: {
         updateButtonStates() {
-            const container = this.$refs.eventsContainer;
-            const maxScrollLeft = container.scrollWidth - container.clientWidth;
+            const container = this.$refs.eventsContainer as HTMLDivElement | undefined;
+            if (!container) return;
 
-            // Define uma margem de erro para garantir que atinja o fim corretamente
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
             const offset = 5;
 
             this.isAtStart = container.scrollLeft <= 0;
@@ -69,39 +62,46 @@ export default {
         scrollLeft() {
             if (this.isAtStart) return;
 
-            const btnGoToLeft = document.getElementById('go-to-left');
-            btnGoToLeft.style.pointerEvents = "none";
+            const btnGoToLeft = document.getElementById('go-to-left') as HTMLButtonElement | null;
+            if (btnGoToLeft) btnGoToLeft.style.pointerEvents = "none";
 
-            const container = this.$refs.eventsContainer;
-            const itemWidth = container.querySelector('.event').clientWidth + 15;
-            container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            const container = this.$refs.eventsContainer as HTMLDivElement | undefined;
+            if (container) {
+                const eventItem = container.querySelector('.event') as HTMLElement | null;
+                const itemWidth = eventItem ? eventItem.clientWidth + 15 : 0;
+                container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
 
-            setTimeout(() => {
-                btnGoToLeft.style.pointerEvents = "auto";
-                this.updateButtonStates();
-            }, 500);
+                setTimeout(() => {
+                    if (btnGoToLeft) btnGoToLeft.style.pointerEvents = "auto";
+                    this.updateButtonStates();
+                }, 500);
+            }
         },
         scrollRight() {
             if (this.isAtEnd) return;
 
-            const btnGoToRight = document.getElementById('go-to-right');
-            btnGoToRight.style.pointerEvents = "none"
+            const btnGoToRight = document.getElementById('go-to-right') as HTMLButtonElement | null;
+            if (btnGoToRight) btnGoToRight.style.pointerEvents = "none";
 
-            const container = this.$refs.eventsContainer;
-            const itemWidth = container.querySelector('.event').clientWidth + 15;
-            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            const container = this.$refs.eventsContainer as HTMLDivElement | undefined;
+            if (container) {
+                const eventItem = container.querySelector('.event') as HTMLElement | null;
+                const itemWidth = eventItem ? eventItem.clientWidth + 15 : 0;
+                container.scrollBy({ left: itemWidth, behavior: 'smooth' });
 
-            setTimeout(() => {
-                btnGoToRight.style.pointerEvents = "auto";
-                this.updateButtonStates();
-            }, 500);
+                setTimeout(() => {
+                    if (btnGoToRight) btnGoToRight.style.pointerEvents = "auto";
+                    this.updateButtonStates();
+                }, 500);
+            }
         },
     },
     mounted() {
         this.updateButtonStates();
     },
-};
+});
 </script>
+
 
 <style lang="css" scoped>
 h2 {

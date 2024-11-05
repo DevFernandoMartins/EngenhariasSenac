@@ -14,6 +14,10 @@
     </footer>
 </template>
 
+<script lang="ts">
+export default {}
+</script>
+
 <style lang="css" scoped>
 footer#footer {
     width: 100%;

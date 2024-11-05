@@ -38,8 +38,10 @@
     </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, onMounted, onBeforeUnmount } from "vue";
+
+export default defineComponent({
     props: {
         title: {
             type: String,
@@ -59,77 +61,85 @@ export default {
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
     },
-    beforeDestroy() {
+    beforeUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
         toggleNavbar() {
-            const navbarSm = document.getElementById('navbar-sm')
-            const btnToggleNav = document.getElementById('btn-toggle-nav')
+            const navbarSm = document.getElementById('navbar-sm') as HTMLElement | null;
+            const btnToggleNav = document.getElementById('btn-toggle-nav') as HTMLElement | null;
+
             if (btnToggleNav) {
                 btnToggleNav.classList.toggle('active');
             }
             if (navbarSm) {
                 navbarSm.classList.toggle('navbar-open');
                 navbarSm.classList.toggle('navbar-close');
-                if (navbarSm.getAttribute('data-status') == "closed") {
+                
+                if (navbarSm.getAttribute('data-status') === "closed") {
                     navbarSm.setAttribute('data-status', 'opened');
-                    this.headerToColor()
+                    this.headerToColor();
                     setTimeout(() => {
                         navbarSm.style.minHeight = "max-content";
                     }, 300);
                 } else {
                     navbarSm.setAttribute('data-status', 'closed');
                     navbarSm.style.minHeight = "";
-                    this.handleScroll()
+                    this.handleScroll();
                 }
-                
             }
         },
         handleScroll() {
-
             if (window.scrollY > 50) {
-                this.headerToColor()
+                this.headerToColor();
             } else {
-                this.headerToWhite()
+                this.headerToWhite();
             }
         },
         headerToColor() {
-            const header = document.getElementById('header');
-            const logo = document.getElementById('logo-senac');
-            const links = header.querySelectorAll('div#inside-header ul li a');
-            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div')
+            const header = document.getElementById('header') as HTMLElement | null;
+            const logo = document.getElementById('logo-senac') as HTMLElement | null;
+            const links = header ? header.querySelectorAll('div#inside-header ul li a') : null;
+            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div');
 
-            header.style.backgroundColor = '#fff';
-            header.style.borderBottom = '1px solid #999999';
-            logo.style.filter = 'none';
+            if (header) {
+                header.style.backgroundColor = '#fff';
+                header.style.borderBottom = '1px solid #999999';
+            }
+            if (logo) {
+                logo.style.filter = 'none';
+            }
             btnOpenNav.forEach(div => {
-                div.style.backgroundColor = "var(--first-color)"
-            })
-            links.forEach(link => {
-                link.style.color = 'var(--black-color)';
+                (div as HTMLElement).style.backgroundColor = "var(--first-color)";
             });
-
+            links?.forEach(link => {
+                (link as HTMLElement).style.color = 'var(--black-color)';
+            });
         },
         headerToWhite() {
-            const header = document.getElementById('header');
-            const logo = document.getElementById('logo-senac');
-            const links = header.querySelectorAll('div#inside-header ul li a');
-            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div')
+            const header = document.getElementById('header') as HTMLElement | null;
+            const logo = document.getElementById('logo-senac') as HTMLElement | null;
+            const links = header ? header.querySelectorAll('div#inside-header ul li a') : null;
+            const btnOpenNav = document.querySelectorAll('#btn-toggle-nav>div');
 
-            header.style.backgroundColor = 'transparent';
-            header.style.borderBottom = 'none';
-            logo.style.filter = 'brightness(0) invert(1)';
+            if (header) {
+                header.style.backgroundColor = 'transparent';
+                header.style.borderBottom = 'none';
+            }
+            if (logo) {
+                logo.style.filter = 'brightness(0) invert(1)';
+            }
             btnOpenNav.forEach(div => {
-                div.style.backgroundColor = "var(--second-color)"
-            })
-            links.forEach(link => {
-                link.style.color = '#fff';
+                (div as HTMLElement).style.backgroundColor = "var(--second-color)";
+            });
+            links?.forEach(link => {
+                (link as HTMLElement).style.color = '#fff';
             });
         }
     }
-};
+});
 </script>
+
 
 <style scoped>
 header#header {

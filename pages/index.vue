@@ -7,13 +7,13 @@
     <CFooter />
 </template>
 
-<script lang="js">
-import CHeader from '~/components/Global/CHeader.vue';
-import HomeIndex from '~/components/Index/HomeIndex.vue';
-import AboutIndex from '~/components/Index/AboutIndex.vue';
-import ScheduleIndex from '~/components/Index/ScheduleIndex.vue';
-import PartnersIndex from '~/components/Index/PartnersIndex.vue';
-import CFooter from '~/components/Global/CFooter.vue';
+<script lang="ts">
+import CHeader from '~/components/Institucional/Global/CHeader.vue';
+import HomeIndex from '~/components/Institucional/Index/HomeIndex.vue';
+import AboutIndex from '~/components/Institucional/Index/AboutIndex.vue';
+import ScheduleIndex from '~/components/Institucional/Index/ScheduleIndex.vue';
+import PartnersIndex from '~/components/Institucional/Index/PartnersIndex.vue';
+import CFooter from '~/components/Institucional/Global/CFooter.vue';
 
 export default {
     components: { CHeader, HomeIndex, AboutIndex, ScheduleIndex, PartnersIndex, CFooter  }

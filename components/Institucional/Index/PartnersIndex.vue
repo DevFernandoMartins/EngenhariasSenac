@@ -18,16 +18,19 @@
     </section>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import Parceiros from '~/public/json/Parceiros.json';
-export default {
+
+export default defineComponent({
     data() {
         return {
             parceiros: Parceiros
         }
     }
-}
+});
 </script>
+
 
 <style lang="css" scoped>
 section#partners-home {

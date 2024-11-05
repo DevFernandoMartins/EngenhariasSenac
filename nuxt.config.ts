@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         { src: 'https://kit.fontawesome.com/a474f4b275.js', crossorigin: 'anonymous' }
       ]
     },
-    baseURL: '/dist/'
+    baseURL: '/hom/'
   },
 
   modules: ['@nuxt/image']

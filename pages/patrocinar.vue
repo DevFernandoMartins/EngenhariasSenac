@@ -4,10 +4,10 @@
     <CFooter />
 </template>
 
-<script>
-import CHeader from '~/components/Global/CHeader.vue';
-import MainSponsor from '~/components/Patrocinar/MainSponsor.vue';
-import CFooter from '~/components/Global/CFooter.vue';
+<script lang="ts">
+import CHeader from '~/components/Institucional/Global/CHeader.vue';
+import MainSponsor from '~/components/Institucional/Patrocinar/MainSponsor.vue';
+import CFooter from '~/components/Institucional/Global/CFooter.vue';
 
 export default {
     components: { CHeader, CFooter, MainSponsor }

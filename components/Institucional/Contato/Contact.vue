@@ -2,7 +2,8 @@
     <section id="main-contact">
         <div id="inside-main-contact">
             <p class="text-center">Preencha as informações abaixo, e em breve nós entraremos em contato.</p>
-            <p class="text-center">Você também pode entrar em contato enviando um e-mail para <strong>suporte@engenhariassenac.com</strong>.</p>
+            <p class="text-center">Você também pode entrar em contato enviando um e-mail para
+                <strong>suporte@engenhariassenac.com</strong>.</p>
             <br>
             <form action="" method="post" id="contact-form">
                 <div class="form-control">
@@ -46,7 +47,8 @@
                 </div>
                 <div class="form-control">
                     <label for="business-name">Mensagem*</label>
-                    <textarea name="business-name" id="business-name" placeholder="Como podemos te ajudar?" rows="4" required></textarea>
+                    <textarea name="business-name" id="business-name" placeholder="Como podemos te ajudar?" rows="4"
+                        required></textarea>
                 </div>
                 <div class="form-control">
                     <input type="submit" value="Enviar">
@@ -56,38 +58,45 @@
     </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, onMounted } from "vue";
+
+export default defineComponent({
     mounted() {
-        const cellphoneInput = document.getElementById("cellphone");
+        const cellphoneInput = document.getElementById("cellphone") as HTMLInputElement | null;
 
-        cellphoneInput.addEventListener("input", function (event) {
-            let value = event.target.value.replace(/\D/g, "");
+        if (cellphoneInput) {
+            cellphoneInput.addEventListener("input", (event) => {
+                const target = event.target as HTMLInputElement;
+                let value = target.value.replace(/\D/g, "");
 
-            // Aplica a máscara
-            if (value.length > 11) value = value.slice(0, 11);
-            value = value.replace(/^(\d{2})(\d)/, "($1) $2");
-            value = value.replace(/(\d{5})(\d)/, "$1-$2");
+                // Aplica a máscara
+                if (value.length > 11) value = value.slice(0, 11);
+                value = value.replace(/^(\d{2})(\d)/, "($1) $2");
+                value = value.replace(/(\d{5})(\d)/, "$1-$2");
 
-            event.target.value = value;
-        });
+                target.value = value;
+            });
+        }
     },
     methods: {
         VerifyIsStudent() {
-            const divCourse = document.getElementById('course')
-            const divSemester = document.getElementById('semester')
+            const divCourse = document.getElementById('course') as HTMLElement | null;
+            const divSemester = document.getElementById('semester') as HTMLElement | null;
+            const studentInput = document.getElementById('student') as HTMLInputElement | null;
 
-            if (document.getElementById('student').value == 's') {
-                divCourse.style.display = "block"
-                divSemester.style.display = "block"
+            if (studentInput && studentInput.value === 's') {
+                if (divCourse) divCourse.style.display = "block";
+                if (divSemester) divSemester.style.display = "block";
             } else {
-                divCourse.style.display = "none"
-                divSemester.style.display = "none"
+                if (divCourse) divCourse.style.display = "none";
+                if (divSemester) divSemester.style.display = "none";
             }
         }
     }
-}
+});
 </script>
+
 
 <style lang="css" scoped>
 p {

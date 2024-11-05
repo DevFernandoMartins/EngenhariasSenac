@@ -1,6 +1,6 @@
 [
     {
-        "img": "/img/no-image.jpg",
+        "img": "/img/withoutimage.png",
         "data": "25/11/2024",
         "horario": "19:10",
         "sala": "G306",
@@ -9,7 +9,7 @@
         "nome_palestrante": "Eng. Euclides"
     },
     {
-        "img": "/img/no-image.JPG",
+        "img": "/img/withoutimage.png",
         "data": "25/11/2024",
         "horario": "20:20",
         "sala": "G306",
@@ -18,7 +18,7 @@
         "nome_palestrante": "Eng. Valter"
     },
     {
-        "img": "/img/no-image.JPG",
+        "img": "/img/withoutimage.png",
         "data": "25/11/2024",
         "horario": "21:30",
         "sala": "G306",
@@ -27,7 +27,7 @@
         "nome_palestrante": "Marcos Martins"
     },
     {
-        "img": "/img/no-image.JPG",
+        "img": "/img/withoutimage.png",
         "data": "26/11/2024",
         "horario": "19:10",
         "sala": "I335",
@@ -36,7 +36,7 @@
         "nome_palestrante": "Eng. Flavio Proibas"
     },
     {
-        "img": "/img/no-image.JPG",
+        "img": "/img/withoutimage.png",
         "data": "26/11/2024",
         "horario": "20:20",
         "sala": "I335",
@@ -45,7 +45,7 @@
         "nome_palestrante": "Eng. Eduardo"
     },
     {
-        "img": "/img/no-image.JPG",
+        "img": "/img/withoutimage.png",
         "data": "26/11/2024",
         "horario": "21:30",
         "sala": "I335",
@@ -54,7 +54,7 @@
         "nome_palestrante": "Eng. Heinrich"
     },
     {
-        "img": "/img/no-image.JPG",
+        "img": "/img/withoutimage.png",
         "data": "27/11/2024",
         "horario": "19:10",
         "sala": "C254",
@@ -63,7 +63,7 @@
         "nome_palestrante": "Roberto Saldo"
     },
     {
-        "img": "/public/img/no-image.jpg",
+        "img": "/img/withoutimage.png",
         "data": "27/11/2024",
         "horario": "20:20",
         "sala": "C254",

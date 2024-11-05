@@ -22,7 +22,7 @@
     </section>
 </template>
 
-<script setup>
+<script lang="ts">
 import { ref, computed } from 'vue'
 import Palestras from '~/public/json/Palestras.json'
 

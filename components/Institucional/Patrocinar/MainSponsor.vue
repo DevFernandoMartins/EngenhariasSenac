@@ -1,7 +1,8 @@
 <template>
     <section id="main-sponsor">
         <div id="inside-main-sponsor">
-            <p class="text-center">Torne-se parceiro da semana das engenharias do Centro Universitário Senac Santo Amaro.</p>
+            <p class="text-center">Torne-se parceiro da semana das engenharias do Centro Universitário Senac Santo
+                Amaro.</p>
             <p class="text-center">Preencha as informações abaixo, e em breve nós entraremos em contato.</p>
             <br>
             <form action="" method="post" id="sponsor-form">
@@ -27,7 +28,8 @@
                 </div>
                 <div class="form-control">
                     <label for="business-name">Sobre a empresa*</label>
-                    <textarea name="business-name" id="business-name" placeholder="Conte um pouco sobre a empresa" rows="4" required></textarea>
+                    <textarea name="business-name" id="business-name" placeholder="Conte um pouco sobre a empresa"
+                        rows="4" required></textarea>
                 </div>
                 <div class="form-control">
                     <input type="submit" value="Enviar">
@@ -36,39 +38,45 @@
         </div>
     </section>
 </template>
+<script lang="ts">
+import { defineComponent, onMounted } from "vue";
 
-<script>
-export default {
+export default defineComponent({
     mounted() {
-        const cellphoneInput = document.getElementById("cellphone");
+        const cellphoneInput = document.getElementById("cellphone") as HTMLInputElement | null;
+        const cnpjInput = document.getElementById("cnpj") as HTMLInputElement | null;
 
-        cellphoneInput.addEventListener("input", function (event) {
-            let value = event.target.value.replace(/\D/g, "");
+        if (cellphoneInput) {
+            cellphoneInput.addEventListener("input", (event: Event) => {
+                const target = event.target as HTMLInputElement;
+                let value = target.value.replace(/\D/g, "");
 
-            // Aplica a máscara
-            if (value.length > 11) value = value.slice(0, 11);
-            value = value.replace(/^(\d{2})(\d)/, "($1) $2");
-            value = value.replace(/(\d{5})(\d)/, "$1-$2");
+                // Aplica a máscara
+                if (value.length > 11) value = value.slice(0, 11);
+                value = value.replace(/^(\d{2})(\d)/, "($1) $2");
+                value = value.replace(/(\d{5})(\d)/, "$1-$2");
 
-            event.target.value = value;
-        });
+                target.value = value;
+            });
+        }
 
-        const cnpjInput = document.getElementById("cnpj");
+        if (cnpjInput) {
+            cnpjInput.addEventListener("input", (event: Event) => {
+                const target = event.target as HTMLInputElement;
+                let value = target.value.replace(/\D/g, "");
 
-        cnpjInput.addEventListener("input", function (event) {
-            let value = event.target.value.replace(/\D/g, "");
+                // Aplica a máscara
+                if (value.length > 14) value = value.slice(0, 14);
+                value = value.replace(/^(\d{2})(\d)/, "$1.$2");
+                value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+                value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
+                value = value.replace(/(\d{4})(\d)/, "$1-$2");
 
-            // Aplica a máscara
-            if (value.length > 14) value = value.slice(0, 14);
-            value = value.replace(/^(\d{2})(\d)/, "$1.$2");
-            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-            value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
-            value = value.replace(/(\d{4})(\d)/, "$1-$2");
-
-            event.target.value = value;
-        });
+                target.value = value;
+            });
+        }
     }
-}
+});
 </script>
 
 <style lang="css" scoped>

@@ -4,10 +4,10 @@
     <CFooter />
 </template>
 
-<script>
-import CHeader from '~/components/Global/CHeader.vue';
-import Contact from '~/components/Contato/Contact.vue';
-import CFooter from '~/components/Global/CFooter.vue';
+<script lang="ts">
+import CHeader from '~/components/Institucional/Global/CHeader.vue';
+import Contact from '~/components/Institucional/Contato/Contact.vue';
+import CFooter from '~/components/Institucional/Global/CFooter.vue';
 
 export default {
     components: { CHeader, CFooter, Contact }

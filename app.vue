@@ -145,6 +145,7 @@ main#main {
     border: 1px solid rgba(0, 0, 0, 0.200);
     padding: 30px;
     border-radius: 20px;
+    margin-bottom: 20px;
   }
 
   .options {
@@ -237,6 +238,10 @@ main#main {
 
   .width-cem {
     width: 100%;
+  }
+
+  .margin-bottom {
+    margin-bottom: 20px;
   }
 }
 

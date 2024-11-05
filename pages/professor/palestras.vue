@@ -4,8 +4,8 @@
 </template>
 
 <script lang="ts">
-import CHeader from '~/components/System/Aluno/AlunoHeader.vue';
-import MainLecture from '~/components/System/Aluno/MainPalestras.vue';
+import CHeader from '~/components/System/Professor/ProfessorHeader.vue';
+import MainLecture from '~/components/System/Professor/MainPalestras.vue';
 
 export default {
     components: { CHeader, MainLecture }

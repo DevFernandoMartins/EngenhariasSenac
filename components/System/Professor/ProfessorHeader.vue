@@ -7,10 +7,9 @@
             </a>
             <nav id="nav">
                 <ul>
-                    <li><router-link to="/aluno" :class="{ active: navActive === 'index' }">Perfil de Aluno</router-link></li>
-                    <li><router-link to="/aluno/grupo" :class="{ active: navActive === 'grupo' }">Meu grupo</router-link></li>
-                    <li><router-link to="/aluno/notas" :class="{ active: navActive === 'notas' }">Notas</router-link></li>
-                    <li><router-link to="/aluno/palestras" :class="{ active: navActive === 'palestras' }">Palestras</router-link></li>
+                    <li><router-link to="/professor" :class="{ active: navActive === 'index' }">Perfil de Professor</router-link></li>
+                    <li><router-link to="/professor/projetos" :class="{ active: navActive === 'projetos' }">Projetos</router-link></li>
+                    <li><router-link to="/professor/Palestras" :class="{ active: navActive === 'palestras' }">Palestras</router-link></li>
                     <li><a href="#" class="out"><i class="fa-solid fa-power-off"></i> Sair</a></li>
 
                 </ul>

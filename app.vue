@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style lang="css">
-
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -124,4 +123,122 @@ section.important {
     display: none;
   }
 }
+
+
+
+/*INÍCIO MAIN*/
+main#main {
+  width: 100%;
+  height: max-content;
+  min-height: calc(100vh - 68px);
+  background-color: rgb(238, 238, 238);
+  padding: 30px;
+
+  #inside-main {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  .space {
+    background-color: var(--second-color);
+    border: 1px solid rgba(0, 0, 0, 0.200);
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .options {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+
+  @media (max-width: 500px) {
+    main#main {
+      padding: 0;
+    }
+
+    .space {
+      border: none;
+      border-radius: 0;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .options>.btn {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  .form-control, .form-select {
+    display: block;
+    width: 100%;
+    padding: 7px 10px;
+  }
+
+  .form-label {
+    display: block;
+    width: 100%;
+    font-size: .8rem;
+    margin: 20px auto 5px;
+  }
+
+  .form-text {
+    font-size: .8rem;
+    opacity: .8;
+  }
+
+  .btn-system {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .8rem;
+    text-decoration: none;
+    display: block;
+    width: max-content;
+  }
+
+  .btn-primary {
+    border: 1px solid var(--first-color);
+    background-color: transparent;
+    color: var(--black-color);
+    transition: .3s;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--first-color);
+    color: var(--second-color);
+  }
+
+  .btn-secondary {
+    border: 1px solid gray;
+    background-color: transparent;
+    color: gray;
+    transition: .3s;
+  }
+
+  .btn-secondary:hover {
+    background-color: gray;
+    color: var(--second-color);
+  }
+
+  .margin-auto {
+    margin: auto;
+  }
+
+  .width-cem {
+    width: 100%;
+  }
+}
+
+/*FIM MAIN*/
 </style>

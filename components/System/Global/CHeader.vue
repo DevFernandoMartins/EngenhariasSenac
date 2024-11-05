@@ -1,18 +1,21 @@
 <template>
     <header id="header">
         <div id="inside-header">
-            <a href="#" class="header-picture"><img src="/public/img/logo-engenharias_senac-azul.png"
-                    alt="Logo dos cursos de Engenharia do Centro Universitário Senac Santo Amaro"></a>
+            <a href="#" class="header-picture">
+                <img src="/public/img/logo-engenharias_senac-azul.png"
+                    alt="Logo dos cursos de Engenharia do Centro Universitário Senac Santo Amaro">
+            </a>
             <nav id="nav">
                 <ul>
-                    <li><a href="/index" class="active">Meu perfil</a></li>
-                    <li><a href="/grupo">Meu grupo</a></li>
-                    <li><a href="/notas">Notas</a></li>
-                    <li><a href="/palestras">Palestras</a></li>
+                    <li><router-link to="/system" :class="{ active: navActive === 'index' }">Meu perfil</router-link></li>
+                    <li><router-link to="/system/grupo" :class="{ active: navActive === 'grupo' }">Meu grupo</router-link></li>
+                    <li><router-link to="/system/notas" :class="{ active: navActive === 'notas' }">Notas</router-link></li>
+                    <li><router-link to="/system/palestras" :class="{ active: navActive === 'palestras' }">Palestras</router-link></li>
                     <li><a href="#" class="out"><i class="fa-solid fa-power-off"></i> Sair</a></li>
+
                 </ul>
             </nav>
-            <div id="btn-toggle-nav" class="btn-to-close" onclick="toggleNavbar">
+            <div id="btn-toggle-nav" class="btn-to-close">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -20,6 +23,17 @@
         </div>
     </header>
 </template>
+
+<script lang="ts">
+export default {
+    props: {
+        navActive: {
+            type: String,
+            required: true
+        }
+    }
+}
+</script>
 
 <style lang="css" scoped>
 header#header {
@@ -38,8 +52,8 @@ header#header {
     margin: auto;
 }
 
-.header-picture > img {
-    height: 40px;
+.header-picture>img {
+    height: 35px;
 }
 
 nav#nav {
@@ -52,7 +66,7 @@ nav#nav {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
 }
 
 #nav a {
@@ -62,6 +76,7 @@ nav#nav {
     transition: background-color 0.3s;
     border-radius: 30px;
     padding: 5px 20px;
+    font-size: .75rem;
 }
 
 #nav a.out {
@@ -73,8 +88,7 @@ nav#nav {
 }
 
 #nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;  
+    background-color: rgba(200, 200, 200, 0.300);
 }
 
 #btn-toggle-nav {
@@ -106,3 +120,4 @@ nav#nav {
 }
 
 </style>
+

@@ -22,16 +22,26 @@
     </section>
 </template>
 
-<script lang="ts">
+<script>
 import { ref, computed } from 'vue'
 import Palestras from '~/public/json/Palestras.json'
 
-const palestras = ref(Palestras)
+export default {
+    setup() {
+        const palestras = ref(Palestras)
+        const limitedPalestras = computed(() => {
+            return palestras.value.slice(0, 4)
+        })
 
-const limitedPalestras = computed(() => {
-    return palestras.value.slice(0, 4)
-})
+        return {
+            palestras,
+            limitedPalestras
+        }
+    }
+}
 </script>
+
+
 
 <style lang="css" scoped>
 p {
@@ -55,6 +65,7 @@ section#schedule-home {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    align-items: start;
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;

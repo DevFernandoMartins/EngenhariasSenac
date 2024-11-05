@@ -1,5 +1,5 @@
 <template>
-    <section id="main-contact">
+    <section id="main-contact" class="important">
         <div id="inside-main-contact">
             <p class="text-center">Preencha as informações abaixo, e em breve nós entraremos em contato.</p>
             <p class="text-center">Você também pode entrar em contato enviando um e-mail para

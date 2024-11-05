@@ -1,5 +1,5 @@
 <template>
-    <section id="schedule-home">
+    <section id="schedule-home" class="important">
         <div id="inside-schedule-home" data-aos="fade-up">
             <h2>{{ title }}</h2>
             <div id="carrossel-control">
@@ -170,7 +170,7 @@ section#schedule-home {
     display: flex;
     flex-wrap: nowrap;
     gap: 15px;
-    align-items: sta;
+    align-items: start;
     padding: 5px;
     overflow-x: scroll;
     scroll-behavior: smooth;

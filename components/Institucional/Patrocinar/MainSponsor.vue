@@ -1,5 +1,5 @@
 <template>
-    <section id="main-sponsor">
+    <section id="main-sponsor" class="important">
         <div id="inside-main-sponsor">
             <p class="text-center">Torne-se parceiro da semana das engenharias do Centro Universitário Senac Santo
                 Amaro.</p>

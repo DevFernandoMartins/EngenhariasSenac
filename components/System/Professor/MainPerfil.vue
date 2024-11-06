@@ -28,7 +28,7 @@
                                     novidades nele também</div>
                             </div>
                             <div class="options">
-                                <a href="https://www.wa.me/5511975669706" target="_blank" class="btn-system btn-secondary">Falar com o suporte</a>
+                                <a href="https://wa.me/5511975669706" target="_blank" class="btn-system btn-secondary">Falar com o suporte</a>
                                 <input type="submit" class="btn-system btn-primary" value="Salvar alterações">
                             </div>
                         </form>

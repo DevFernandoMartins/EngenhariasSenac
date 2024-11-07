@@ -2,36 +2,7 @@
     <main id="main">
         <div id="inside-main">
             <div class="space">
-                <nav id="nav" class="margin-bottom">
-                    <ul>
-                        <li><router-link to="" class="active">2º Sem</router-link></li>
-                        <li><router-link to="">4º Sem</router-link></li>
-                        <li><router-link to="">6º Sem</router-link></li>
-                        <li><router-link to="">8º Sem</router-link></li>
-                        <li><router-link to="">10º Sem</router-link></li>
-                    </ul>
-                </nav>
-                <div class="form-text margin-bottom">* Exibindo projetos do 2º semestre</div>
-                <div id="events">
-                    <div class="event" v-for="event in 8">
-                        <div class="event-img">
-                            <img src="/public/img/no-image.jpg" alt="Imagem da palestra" />
-                        </div>
-                        <div class="event-data">
-                            <div class="event-local">28/11/2024 19h10 - E285</div>
-                            <h3 class="event-title">Inteligência Artificial</h3>
-                            <h4 class="speaker-name">Fulano de tal</h4>
-                            <p class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tenetur
-                                obcaecati consequuntur ipsum quo facere. Cumque quod at distinctio, eaque delectus error
-                                odit, minus iure nesciunt deleniti temporibus excepturi voluptatibus?</p>
-                            <div class="div-progress-bar">
-                                <div></div>
-                                <span>100%</span>
-                            </div>
-                            <a href="#" class="btn-system btn-primary text-center width-cem">Emitir Certificado</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </main>

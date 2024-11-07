@@ -31,7 +31,7 @@
 
 #events {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px 10px;
 }
 
@@ -143,21 +143,6 @@
     color: gray;
     text-decoration: none;
     opacity: 0.6; 
-}
-
-
-@media (max-width: 1200px) {
-    #events {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-}
-
-@media (max-width: 900px) {
-    #events {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
 }
 
 @media (max-width: 600px) {

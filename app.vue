@@ -136,7 +136,7 @@ main#main {
 
   #inside-main {
     width: 100%;
-    max-width: 1440px;
+    max-width: 800px;
     margin: auto;
   }
 

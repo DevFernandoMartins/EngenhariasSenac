@@ -3,14 +3,15 @@
         <div id="inside-main">
             <div class="space">
                 <div id="perfil">
-                    <div class="user-picture">
+                    <!-- <div class="user-picture">
                         <img src="/public/img/no-image.jpg" alt="Foto do usuário">
                         <a href="#"  class="btn-system btn-secondary margin-auto">Alterar foto</a>
                         <br>
                         <div class="form-text">* Para alterar dados bloqueados, entre em contato com o suporte</div>
-                    </div>
+                    </div> -->
                     <div class="user-data">
                         <form action="" method="post">
+                            <a href="#" class="btn-system btn-primary width-cem text-center">Abrir QR Code</a>
                             <div class="mb-3">
                                 <label for="input-fullname" class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" id="input-fullname" name="input-fullname"

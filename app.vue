@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default {
   mounted() {
@@ -16,35 +16,35 @@ export default {
     return {
       script: [
         {
-          src: 'https://kit.fontawesome.com/a474f4b275.js',
-          crossorigin: 'anonymous'
-        }
+          src: "https://kit.fontawesome.com/a474f4b275.js",
+          crossorigin: "anonymous",
+        },
       ],
       link: [
         {
-          rel: 'stylesheet',
-          href: 'https://unpkg.com/aos@2.3.1/dist/aos.css'
-        }
-      ]
-    }
-  }
-}
+          rel: "stylesheet",
+          href: "https://unpkg.com/aos@2.3.1/dist/aos.css",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="css">
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 :root {
   --first-color: #000033;
-  --second-color: #FFF;
+  --second-color: #fff;
   --black-color: #262626;
 }
 
@@ -52,7 +52,7 @@ h1 {
   text-align: center;
   margin: 0 0 15px;
   font-size: 40px;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   color: #fff;
   font-weight: 600;
 }
@@ -60,7 +60,7 @@ h1 {
 h2 {
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   color: var(--black-color);
   margin-bottom: 15px;
 }
@@ -72,7 +72,7 @@ a.btn {
   text-decoration: none;
   border-radius: 30px;
   margin-top: 30px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 a.btn-primary {
@@ -117,14 +117,11 @@ section.important {
   }
 }
 
-
 @media (max-width: 300px) {
   body {
     display: none;
   }
 }
-
-
 
 /*INÍCIO MAIN*/
 main#main {
@@ -142,9 +139,9 @@ main#main {
 
   .space {
     background-color: var(--second-color);
-    border: 1px solid rgba(0, 0, 0, 0.200);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
   }
 
@@ -173,13 +170,14 @@ main#main {
       gap: 10px;
     }
 
-    .options>.btn {
+    .options > .btn {
       max-width: none;
       width: 100%;
     }
   }
 
-  .form-control, .form-select {
+  .form-control,
+  .form-select {
     display: block;
     width: 100%;
     padding: 7px 10px;
@@ -188,13 +186,13 @@ main#main {
   .form-label {
     display: block;
     width: 100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin: 20px auto 5px;
   }
 
   .form-text {
-    font-size: .8rem;
-    opacity: .8;
+    font-size: 0.8rem;
+    opacity: 0.8;
   }
 
   .btn-system {
@@ -202,7 +200,7 @@ main#main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-decoration: none;
     display: block;
     width: max-content;
@@ -212,7 +210,7 @@ main#main {
     border: 1px solid var(--first-color);
     background-color: transparent;
     color: var(--black-color);
-    transition: .3s;
+    transition: 0.3s;
   }
 
   .btn-primary:hover {
@@ -224,7 +222,7 @@ main#main {
     border: 1px solid gray;
     background-color: transparent;
     color: gray;
-    transition: .3s;
+    transition: 0.3s;
   }
 
   .btn-secondary:hover {

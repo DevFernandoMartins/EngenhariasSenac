@@ -142,8 +142,6 @@ main#main {
 
   .space {
     background-color: var(--second-color);
-    border-radius: 10px;
-    margin-bottom: 20px;
     width: 100%;
     padding: 20px;
   }
@@ -191,6 +189,13 @@ main#main {
     border: 1px solid var(--black-color);
     border-radius: 10px;
     margin: 3px 0;
+    background-color: var(--second-color);
+    color: var(--black-color);
+  }
+
+  .form-control[disabled],
+  .form-select[disabled] {
+    opacity: 0.4;
   }
 
   .form-label {
@@ -200,11 +205,13 @@ main#main {
     font-weight: 600;
     margin: 5px auto;
     opacity: 0.7;
+    color: var(--black-color);
   }
 
   .form-text {
     font-size: 0.7rem;
     opacity: 0.7;
+    color: var(--black-color);
   }
 
   .btn-system {

@@ -15,7 +15,7 @@
 
   <nav id="nav">
     <img
-      src="/public/img/logo-engenharias_senac-azul.png"
+      src="/public/img/logo-engenharias_senac.png"
       alt="Logo dos cursos de Engenharia do Centro Universitário Senac Santo Amaro"
     />
     <ul>
@@ -85,7 +85,8 @@ nav#nav {
   padding: 30px 10px;
   width: 250px;
   height: 100%;
-  border-right: 1px solid rgb(228, 228, 228);
+  border-right: 1px solid rgb(10, 10, 10);
+  background-color: var(--first-color);
 }
 
 nav#nav > img {
@@ -121,7 +122,7 @@ nav#nav > img {
   align-items: center;
   gap: 10px;
   width: 100%;
-  color: var(--black-color);
+  color: var(--second-color);
   text-decoration: none;
   transition: background-color 0.3s;
   border-radius: 10px;
@@ -140,11 +141,11 @@ nav#nav > img {
 }
 
 #nav a.active {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #nav a:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #btn-toggle-nav {

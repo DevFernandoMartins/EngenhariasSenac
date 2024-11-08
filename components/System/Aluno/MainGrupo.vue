@@ -52,3 +52,13 @@
         </div>
     </main>
 </template>
+
+<style lang="css" scoped>
+#perfil {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  gap: 30px;
+  margin: auto;
+}
+</style>

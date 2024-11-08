@@ -128,21 +128,24 @@ main#main {
   width: 100%;
   height: max-content;
   min-height: calc(100vh - 68px);
-  background-color: rgb(238, 238, 238);
-  padding: 30px;
+  background-color: #fff;
+  padding-left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   #inside-main {
     width: 100%;
-    max-width: 800px;
+    max-width: 1440px;
     margin: auto;
   }
 
   .space {
     background-color: var(--second-color);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 30px;
     border-radius: 10px;
     margin-bottom: 20px;
+    width: 100%;
+    padding: 20px;
   }
 
   .options {
@@ -176,34 +179,44 @@ main#main {
     }
   }
 
+  .mb-3 {
+    margin-bottom: 20px;
+  }
+
   .form-control,
   .form-select {
     display: block;
     width: 100%;
-    padding: 7px 10px;
+    padding: 8px 12px;
+    border: 1px solid var(--black-color);
+    border-radius: 10px;
+    margin: 3px 0;
   }
 
   .form-label {
     display: block;
     width: 100%;
     font-size: 0.8rem;
-    margin: 20px auto 5px;
+    font-weight: 600;
+    margin: 5px auto;
+    opacity: 0.7;
   }
 
   .form-text {
-    font-size: 0.8rem;
-    opacity: 0.8;
+    font-size: 0.7rem;
+    opacity: 0.7;
   }
 
   .btn-system {
-    padding: 10px 20px;
+    padding: 8px 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 0.8rem;
     text-decoration: none;
     display: block;
     width: max-content;
+    margin: 10px 0;
   }
 
   .btn-primary {
@@ -240,6 +253,18 @@ main#main {
 
   .margin-bottom {
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 999px) {
+  main#main {
+    width: 100%;
+    height: max-content;
+    min-height: calc(100vh - 68px);
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

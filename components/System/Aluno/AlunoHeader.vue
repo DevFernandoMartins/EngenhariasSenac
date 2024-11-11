@@ -5,7 +5,7 @@
         src="/public/img/logo-engenharias_senac-azul.png"
         alt="Logo dos cursos de Engenharia do Centro Universitário Senac Santo Amaro"
       />
-      <div id="btn-toggle-nav">
+      <div id="btn-toggle-nav" @click="toggleNav" :class="{ open: isNavOpen }">
         <div></div>
         <div></div>
         <div></div>
@@ -13,49 +13,58 @@
     </div>
   </header>
 
-  <nav id="nav">
-    <img
-      src="/public/img/logo-engenharias_senac.png"
-      alt="Logo dos cursos de Engenharia do Centro Universitário Senac Santo Amaro"
-    />
-    <ul>
-      <li>
-        <router-link to="/aluno" :class="{ active: navActive === 'index' }"
-          ><i class="fa-regular fa-user"></i> Perfil de Aluno</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          to="/aluno/grupo"
-          :class="{ active: navActive === 'grupo' }"
-          ><i class="fa-solid fa-people-group"></i> Meu grupo</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          to="/aluno/notas"
-          :class="{ active: navActive === 'notas' }"
-          ><i class="fa-regular fa-clipboard"></i> Notas</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          to="/aluno/palestras"
-          :class="{ active: navActive === 'palestras' }"
-          ><i class="fa-solid fa-microphone"></i> Palestras</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          to="/aluno/qrcode"
-          :class="{ active: navActive === 'qr-code' }"
-          ><i class="fa-solid fa-qrcode"></i> QR Code</router-link
-        >
-      </li>
-      <li>
-        <a href="#" class="out"><i class="fa-solid fa-power-off"></i> Sair</a>
-      </li>
-    </ul>
+  <nav id="nav" :class="{ 'nav-open': isNavOpen }">
+    <div id="inside-nav">
+      <img
+        src="/public/img/logo-engenharias_senac.png"
+        alt="Logo dos cursos de Engenharia do Centro Universitário Senac Santo Amaro"
+      />
+      <ul>
+        <li>
+          <router-link to="/aluno" :class="{ active: navActive === 'index' }"
+            ><i class="fa-regular fa-user"></i> Perfil de Aluno</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/aluno/grupo"
+            :class="{ active: navActive === 'grupo' }"
+            ><i class="fa-solid fa-people-group"></i> Meu grupo</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/aluno/notas"
+            :class="{ active: navActive === 'notas' }"
+            ><i class="fa-regular fa-note-sticky"></i> Notas</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/aluno/palestras"
+            :class="{ active: navActive === 'palestras' }"
+            ><i class="fa-solid fa-microphone"></i> Palestras</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/aluno/qrcode"
+            :class="{ active: navActive === 'qr-code' }"
+            ><i class="fa-solid fa-qrcode"></i> QR Code</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/aluno/avaliar"
+            :class="{ active: navActive === 'avaliar' }"
+            ><i class="fa-regular fa-clipboard"></i> Avaliar</router-link
+          >
+        </li>
+        <li>
+          <a href="#" class="out"><i class="fa-solid fa-power-off"></i> Sair</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -65,6 +74,24 @@ export default {
     navActive: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      isNavOpen: false,
+    };
+  },
+  methods: {
+    toggleNav() {
+      this.isNavOpen = !this.isNavOpen;
+
+      if (this.isNavOpen) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
     },
   },
 };
@@ -84,40 +111,53 @@ nav#nav {
   left: 0;
   padding: 30px 10px;
   width: 250px;
-  height: 100%;
+  height: 100vh;
   border-right: 1px solid rgb(10, 10, 10);
   background-color: var(--first-color);
+  overflow: auto;
+  transition: left 0.3s ease;
 }
 
-nav#nav > img {
+nav#nav.nav-open {
+  left: 0;
+}
+
+#inside-nav {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  position: relative;
+}
+
+#inside-nav > img {
   width: 100%;
   max-width: 180px;
-  margin: 0 auto 50px;
+  display: block;
+  margin: 0 auto 40px;
 }
 
-#nav ul {
+#inside-nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 5px;
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: max-content;
 }
 
-#nav ul li {
+#inside-nav ul li {
   display: block;
   width: 100%;
 }
 
-#nav ul li:nth-last-child(1) {
+#inside-nav ul li:nth-last-child(1) {
   position: absolute;
   bottom: 0;
   max-width: 100%;
 }
 
-#nav a {
+#inside-nav a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -131,20 +171,20 @@ nav#nav > img {
   font-weight: 500;
 }
 
-#nav a i {
+#inside-nav a i {
   display: block;
   width: 15px;
 }
 
-#nav a.out {
-  color: rgb(224, 0, 0);
+#inside-nav a.out {
+  opacity: 0.5;
 }
 
-#nav a.active {
+#inside-nav a.active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#nav a:hover {
+#inside-nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -185,12 +225,28 @@ nav#nav > img {
     height: 3px;
     background-color: var(--first-color);
     border-radius: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  #btn-toggle-nav.open > div:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  #btn-toggle-nav.open > div:nth-child(2) {
+    opacity: 0;
+  }
+
+  #btn-toggle-nav.open > div:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
   }
 
   nav#nav {
     left: -300px;
     z-index: 20;
-    background-color: var(--second-color);
+  }
+
+  .no-scroll {
+    overflow-y: hidden;
   }
 }
 </style>

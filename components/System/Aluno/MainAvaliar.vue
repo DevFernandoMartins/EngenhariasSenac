@@ -31,7 +31,7 @@
                   :id="`input-${id}`"
                   :name="`nota${id.charAt(0).toUpperCase() + id.slice(1)}`"
                   placeholder="0,00"
-                  @input="applyDecimalMask"
+                  @input="applyMask"
                 />
               </div>
             </div>
@@ -62,7 +62,27 @@ export default {
         apresentacao: "Apresentação pública do grupo",
         tempo: "Cumprimento do tempo de apresentação",
       },
+      value: "",
     };
+  },
+  methods: {
+    applyMask(event) {
+      let inputValue = event.target.value.replace(/\D/g, "");
+
+      // Impede que o usuário digite mais de 10 dígitos
+      if (inputValue.length > 4) {
+        inputValue = inputValue.slice(0, 4); // Limita a 10 dígitos
+      }
+
+      if (inputValue.length > 2) {
+        inputValue = inputValue.replace(/(\d+)(\d{2})$/, "$1,$2");
+      }
+      if (inputValue.length > 5) {
+        inputValue = inputValue.replace(/(\d)(\d{3})$/, "$1.$2");
+      }
+
+      event.target.value = inputValue;
+    },
   },
 };
 </script>

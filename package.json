@@ -13,6 +13,7 @@
     "@nuxt/image": "^1.8.1",
     "aos": "^2.3.4",
     "ipx": "^3.0.1",
+    "jquery": "^3.7.1",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"

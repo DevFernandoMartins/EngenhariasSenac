@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 // Função que manipula a rota GET para '/api/group/data'
 export const getGroupData = (req: Request, res: Response) => {
   const groupData = {
-    NomeGrupo: 'Grupo de Teste',
+    NomeGrupo: 'DESISTO',
     CodGrupo: '12345',
     LiderNome: 'Fernando',
     // Garantindo que Integrantes seja um array de strings

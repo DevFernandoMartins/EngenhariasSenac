@@ -4,66 +4,45 @@
       <div class="space">
         <div id="perfil">
           <div class="user-data">
-            <form action="" method="post">
+            <form @submit.prevent="handleSave" method="post">
               <div class="mb-3">
-                <label for="input-fullname" class="form-label"
-                  >Nome Completo</label
-                >
+                <label for="input-fullname" class="form-label">Nome Completo</label>
                 <input
                   type="text"
                   class="form-control"
                   id="input-fullname"
-                  name="input-fullname"
-                  value="Rafael Pequino Freire"
+                  name="fullname"
+                  v-model="userData.NomeCompleto"
                   disabled
                 />
               </div>
               <div class="mb-3">
-                <label for="input-fullname" class="form-label"
-                  >ID do Senac</label
-                >
+                <label for="input-id-senac" class="form-label">ID do Senac</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="input-fullname"
-                  name="input-fullname"
-                  value="1142926459"
+                  id="input-id-senac"
+                  name="id-senac"
+                  v-model="userData.IdAluno"
                   disabled
                 />
               </div>
               <div class="mb-3">
-                <label for="input-fullname" class="form-label"
-                  >E-mail Institucional</label
-                >
+                <label for="input-email-institucional" class="form-label">E-mail Institucional</label>
                 <input
-                  type="text"
+                  type="email"
                   class="form-control"
-                  id="input-fullname"
-                  name="input-fullname"
-                  value="rafael.pfreire1@senacsp.edu.br"
+                  id="input-email-institucional"
+                  name="email-institucional"
+                  v-model="userData.Email"
                   disabled
                 />
               </div>
               <div class="mb-3">
-                <label for="input-fullname" class="form-label"
-                  >E-mail Pessoal (opcional)</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="input-fullname"
-                  name="input-fullname"
-                />
-                <div class="form-text">
-                  Se estiver com o seu e-mail pessoal cadastrado, receberá todas
-                  as novidades nele também
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="input-fullname" class="form-label">Semestre</label>
-                <select class="form-select" disabled>
+                <label for="input-semestre" class="form-label">Semestre</label>
+                <select class="form-select" id="input-semestre" v-model="userData.Semestre" disabled>
                   <option disabled>Selecione um semestre...</option>
-                  <option value="2" selected>2</option>
+                  <option value="2">2</option>
                   <option value="4">4</option>
                   <option value="6">6</option>
                   <option value="8">8</option>
@@ -71,27 +50,21 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="input-fullname" class="form-label">Curso</label>
-                <select class="form-select" disabled>
+                <label for="input-curso" class="form-label">Curso</label>
+                <select class="form-select" id="input-curso" v-model="userData.Curso" disabled>
                   <option disabled>Selecione um curso...</option>
-                  <option value="comp" selected>
-                    Engenharia de Computação
-                  </option>
-                  <option value="prod">Engenharia de produção</option>
+                  <option value="computacao">Engenharia da Computação</option>
+                  <option value="producao">Engenharia de Produção</option>
                 </select>
               </div>
               <div class="options">
                 <a
-                  href="https://wa.me/5511975669706"
+                  href="https://wa.me/551195362039"
                   target="_blank"
                   class="btn-system btn-secondary"
-                  >Falar com o suporte</a
                 >
-                <input
-                  type="submit"
-                  class="btn-system btn-primary"
-                  value="Salvar alterações"
-                />
+                  Falar com o suporte
+                </a>
               </div>
             </form>
           </div>
@@ -101,51 +74,58 @@
   </main>
 </template>
 
-<style lang="css" scoped>
-#perfil {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  gap: 30px;
-  margin: auto;
-}
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 
-.user-picture > img {
-  width: 300px;
-  min-width: 300px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 30px;
-}
+const userData = ref({
+  NomeCompleto: '',
+  IdAluno: '',
+  Email: '',
+  emailPessoal: '',
+  Semestre: '',
+  Curso: '',
+});
 
-.user-data {
-  width: 100%;
-}
+const router = useRouter();
 
-@media (max-width: 999px) {
-  #perfil {
-    flex-direction: column;
+// Função para pegar os dados do usuário
+onMounted(async () => {
+  const token = localStorage.getItem('authToken');
+
+  if (token) {
+    try {
+      const response = await $fetch('/api/user/data', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // Exibe a resposta completa da API para análise
+      console.log('Resposta da API:', response);
+
+      // Verifica se a resposta é um objeto e contém os dados esperados
+      if (response && response.IdAluno) {
+        userData.value = {
+          NomeCompleto: response.nomeCompleto || '',
+          Email: response.email || '',
+          Semestre: response.semestre || '',
+          Curso: response.curso || '',
+          IdAluno: response.IdAluno || '',
+        };
+        console.log('Dados do usuário atribuídos:', userData.value);
+      } else {
+        console.error('Dados do usuário não encontrados ou formato inválido');
+        alert('Dados do usuário não encontrados ou formato inválido');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar dados do usuário:', error);
+      alert('Erro ao buscar dados');
+      router.push('/login'); // Redireciona para login em caso de erro
+    }
+  } else {
+    router.push('/login'); // Se não houver token, redireciona para login
   }
-
-  .user-picture {
-    text-align: center;
-  }
-
-  .user-picture > img {
-    margin: 0 auto 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .user-picture > img {
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
-    height: 250px;
-  }
-}
-</style>
+});
+</script>

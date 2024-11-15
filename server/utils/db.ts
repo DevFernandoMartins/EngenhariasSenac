@@ -1,11 +1,12 @@
 import mysql from 'mysql2/promise';
+import { useRuntimeConfig } from '#imports';
 
-export const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'qrcode_db',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
-});
+export async function createConnection() {
+  const config = useRuntimeConfig();
+  return await mysql.createConnection({
+    host: config.dbHost,
+    user: config.dbUser,
+    password: config.dbPassword,
+    database: config.dbName
+  });
+}

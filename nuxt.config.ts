@@ -9,8 +9,14 @@ export default defineNuxtConfig({
         { src: 'https://kit.fontawesome.com/a474f4b275.js', crossorigin: 'anonymous' }
       ]
     },
-    baseURL: '/hom/'
   },
 
-  modules: ['@nuxt/image']
+  modules: ['@nuxt/image'],
+
+  runtimeConfig: {
+    dbHost: process.env.DB_HOST,
+    dbUser: process.env.DB_USER,
+    dbPassword: process.env.DB_PASSWORD,
+    dbName: process.env.DB_NAME
+  },
 })
